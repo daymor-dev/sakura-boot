@@ -1,5 +1,5 @@
 = Installation
-Malcolm Rozé <malcolm@sansenshimizu.com>
+Malcolm Rozé <sakura-boot@daymor.dev>
 :description: Sakura Boot — log module — installation page documentation
 
 The installation documentation will explain all the different possibilities to install the Sakura Boot log module to build an application with logging facilities.
@@ -21,7 +21,7 @@ This includes the basic functionalities of sakura boot, the necessary spring boo
 [,xml,subs=+attributes]
 ----
 <dependency>
-    <groupId>org.sansenshimizu.sakuraboot</groupId>
+    <groupId>dev.daymor.sakuraboot</groupId>
     <artifactId>sakura-boot-starter-predefined-basic</artifactId>
     <version>{release-version}</version>
 </dependency>
@@ -36,7 +36,7 @@ This includes only the basic functionalities of sakura boot.
 [,xml,subs=+attributes]
 ----
 <dependency>
-    <groupId>org.sansenshimizu.sakuraboot</groupId>
+    <groupId>dev.daymor.sakuraboot</groupId>
     <artifactId>sakura-boot-starter-basic</artifactId>
     <version>{release-version}</version>
 </dependency>
@@ -51,7 +51,7 @@ This includes the log module with the core of sakura boot and only necessary dep
 [,xml,subs=+attributes]
 ----
 <dependency>
-    <groupId>org.sansenshimizu.sakuraboot</groupId>
+    <groupId>dev.daymor.sakuraboot</groupId>
     <artifactId>sakura-boot-log</artifactId>
     <version>{release-version}</version>
 </dependency>
@@ -67,7 +67,7 @@ This includes the basic functionalities of sakura boot, the necessary spring boo
 
 [,kotlin,subs=+attributes]
 ----
-implementation("org.sansenshimizu.sakuraboot:sakura-boot-starter-predefined-basic:{release-version}")
+implementation("dev.daymor.sakuraboot:sakura-boot-starter-predefined-basic:{release-version}")
 ----
 
 === Custom dependencies
@@ -78,7 +78,7 @@ This includes only the basic functionalities of sakura boot.
 
 [,kotlin,subs=+attributes]
 ----
-implementation("org.sansenshimizu.sakuraboot:sakura-boot-starter-basic:{release-version}")
+implementation("dev.daymor.sakuraboot:sakura-boot-starter-basic:{release-version}")
 ----
 
 === Customisation
@@ -89,5 +89,5 @@ This includes the log module with the core of sakura boot and only necessary dep
 
 [,kotlin,subs=+attributes]
 ----
-implementation("org.sansenshimizu.sakuraboot:sakura-boot-log:{release-version}")
+implementation("dev.daymor.sakuraboot:sakura-boot-log:{release-version}")
 ----

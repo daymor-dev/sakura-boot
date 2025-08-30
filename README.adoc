@@ -1,24 +1,16 @@
 = Sakura Boot
 :toc: macro
 
-image:https://img.shields.io/github/v/release/Sansen-Shimizu/sakura-boot[GitHub Release]
-image:https://img.shields.io/github/deployments/Sansen-Shimizu/sakura-boot/github-pages[GitHub deployments]
-image:https://img.shields.io/github/license/Sansen-Shimizu/sakura-boot[GitHub License]
+image:https://img.shields.io/github/v/release/daymor-dev/sakura-boot[GitHub Release]
+image:https://img.shields.io/github/deployments/daymor-dev/sakura-boot/github-pages[GitHub deployments]
+image:https://img.shields.io/github/license/daymor-dev/sakura-boot[GitHub License]
 
-[.text-right]
-By https://sansen-shimizu.co.jp[Sansen Shimizu]
-
-[cols="^a,^a",frame=none,grid=none]
-|===
-| image::SakuraBootLogo.png[alt="Sakura Boot logo"]
-| image::sansenshimizuLogo.png[alt="Sansen Shimizu logo"]
-|===
+[.text-center]
+image::SakuraBootLogo.png[alt="Sakura Boot logo"]
 
 toc::[]
 
-= Archive
-
-This project is now in an archive state.
+This is a personal fork of the Sakura Boot framework originally created at https://github.com/Sansen-Shimizu/sakura-boot[Sansen Shimizu], now independently maintained.
 
 == Introduction
 
@@ -95,9 +87,9 @@ This includes the basic functionalities of sakura boot, the necessary spring boo
 ----
 <dependencies>
     <dependency>
-        <groupId>org.sansenshimizu.sakuraboot</groupId>
+        <groupId>dev.daymor.sakura-boot</groupId>
         <artifactId>sakura-boot-starter-predefined-basic</artifactId>
-        <version>${org.sansenshimizu.sakuraboot.version}</version>
+        <version>${dev.daymor.sakura-boot.version}</version>
     </dependency>
 </dependencies>
 ----
@@ -108,9 +100,9 @@ This includes all the modules of sakura boot, the necessary spring boot starter,
 ----
 <dependencies>
     <dependency>
-        <groupId>org.sansenshimizu.sakuraboot</groupId>
+        <groupId>dev.daymor.sakura-boot</groupId>
         <artifactId>sakura-boot-starter-predefined-all-module</artifactId>
-        <version>${org.sansenshimizu.sakuraboot.version}</version>
+        <version>${dev.daymor.sakura-boot.version}</version>
     </dependency>
 </dependencies>
 ----
@@ -121,14 +113,14 @@ This includes the basic functionalities of sakura boot, the necessary spring boo
 
 [,kotlin]
 ----
-implementation("org.sansenshimizu.sakuraboot:sakura-boot-starter-predefined-basic:LATEST_VERSION")
+implementation("dev.daymor.sakura-boot:sakura-boot-starter-predefined-basic:LATEST_VERSION")
 ----
 
 This includes all the modules of sakura boot, the necessary spring boot starter, mapstruct, ehcache3 as cache provider, and a runtime postgresql.
 
 [,kotlin]
 ----
-implementation("org.sansenshimizu.sakuraboot:sakura-boot-starter-predefined-all-module:LATEST_VERSION")
+implementation("dev.daymor.sakura-boot:sakura-boot-starter-predefined-all-module:LATEST_VERSION")
 ----
 
 For custom dependencies that include necessary dependencies, starters without predefined are also available:
@@ -155,7 +147,7 @@ For more fine-grained control over dependencies, import directly from each modul
 
 == Documentation
 
-The project documentation is located in the link:./docs/[documentation] folder, and available at https://sakuraboot.sansenshimizu.org/documentation[window=_blank].
+The project documentation is located in the link:./docs/[documentation] folder, and available at https://sakura-boot.daymor.dev/documentation[window=_blank].
 
 All the classes are well-documented with Javadoc and example.
 
@@ -185,9 +177,8 @@ boot].
 
 If you have any questions, feedback, or collaboration ideas, feel free to contact:
 
-* Email: malcolm@sansenshimizu.com
-* GitHub: https://github.com/malcolmSansen
-* Sansen Shimizu: https://sansen-shimizu.co.jp
+* Email: link:mailto:sakura-boot@daymor.dev[sakura-boot@daymor.dev]
+* GitHub: https://github.com/daymor-dev/sakura-boot/discussions
 
 == License
 

@@ -2,7 +2,7 @@
 
 == Find a bug?
 
-If you find a bug, please open an https://github.com/Sansen-Shimizu/sakura-boot/issues[issue].
+If you find a bug, please open an https://github.com/daymor-dev/sakura-boot/issues[issue].
 
 Please provide any information that can help resolve the problem with a short description, a stacktrace, and a minimal reproducible example if applicable.
 
@@ -10,8 +10,8 @@ Please provide any information that can help resolve the problem with a short de
 
 If you have any idea that could improve this project or any question:
 
-* Open an https://github.com/Sansen-Shimizu/sakura-boot/issues[issue]
-* Start a new https://github.com/Sansen-Shimizu/sakura-boot/discussions[discussion]
+* Open an https://github.com/daymor-dev/sakura-boot/issues[issue]
+* Start a new https://github.com/daymor-dev/sakura-boot/discussions[discussion]
 
 == Contribute
 
@@ -41,9 +41,8 @@ The project follows a code of conduct, please check out this link:./CODE_OF_COND
 
 If you have any questions, feedback, or collaboration ideas, feel free to contact:
 
-* Email: malcolm@sansenshimizu.com
-* GitHub: https://github.com/malcolmSansen
-* Sansen Shimizu: https://sansen-shimizu.co.jp
+* Email: link:mailto:sakura-boot@daymor.dev[sakura-boot@daymor.dev]
+* GitHub: https://github.com/daymor-dev/sakura-boot/discussions
 
 == License
 

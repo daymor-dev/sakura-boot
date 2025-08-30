@@ -1,5 +1,5 @@
 = Installation
-Malcolm Rozé <malcolm@sansenshimizu.com>
+Malcolm Rozé <sakura-boot@daymor.dev>
 :description: Sakura Boot installation page documentation
 
 The installation documentation will explain all the different possibilities to install Sakura Boot to build an application.
@@ -21,7 +21,7 @@ This includes the basic functionalities of sakura boot, the necessary spring boo
 [,xml,subs=+attributes]
 ----
 <dependency>
-    <groupId>org.sansenshimizu.sakuraboot</groupId>
+    <groupId>dev.daymor.sakura-boot</groupId>
     <artifactId>sakura-boot-starter-predefined-basic</artifactId>
     <version>{release-version}</version>
 </dependency>
@@ -32,7 +32,7 @@ This includes all the modules of sakura boot, the necessary spring boot starter,
 [,xml,subs=+attributes]
 ----
 <dependency>
-    <groupId>org.sansenshimizu.sakuraboot</groupId>
+    <groupId>dev.daymor.sakura-boot</groupId>
     <artifactId>sakura-boot-starter-predefined-all-module</artifactId>
     <version>{release-version}</version>
 </dependency>
@@ -47,7 +47,7 @@ This includes only the basic functionalities of sakura boot.
 [,xml,subs=+attributes]
 ----
 <dependency>
-    <groupId>org.sansenshimizu.sakuraboot</groupId>
+    <groupId>dev.daymor.sakura-boot</groupId>
     <artifactId>sakura-boot-starter-basic</artifactId>
     <version>{release-version}</version>
 </dependency>
@@ -58,7 +58,7 @@ This includes all the modules of sakura boot.
 [,xml,subs=+attributes]
 ----
 <dependency>
-    <groupId>org.sansenshimizu.sakuraboot</groupId>
+    <groupId>dev.daymor.sakura-boot</groupId>
     <artifactId>sakura-boot-starter-all-module</artifactId>
     <version>{release-version}</version>
 </dependency>
@@ -81,7 +81,7 @@ This includes the basic functionalities of sakura boot, the necessary spring boo
 [,xml,subs=+attributes]
 ----
 <dependency>
-    <groupId>org.sansenshimizu.sakuraboot</groupId>
+    <groupId>dev.daymor.sakura-boot</groupId>
     <artifactId>sakura-boot-starter-predefined-basic-functional-test</artifactId>
     <version>{release-version}</version>
     <scope>test</scope>
@@ -93,7 +93,7 @@ This includes all the modules of sakura boot, the necessary spring boot starter,
 [,xml,subs=+attributes]
 ----
 <dependency>
-    <groupId>org.sansenshimizu.sakuraboot</groupId>
+    <groupId>dev.daymor.sakura-boot</groupId>
     <artifactId>sakura-boot-starter-predefined-all-module-functional-test</artifactId>
     <version>{release-version}</version>
     <scope>test</scope>
@@ -107,7 +107,7 @@ This includes the basic functionalities of sakura boot, the necessary spring boo
 [,xml,subs=+attributes]
 ----
 <dependency>
-    <groupId>org.sansenshimizu.sakuraboot</groupId>
+    <groupId>dev.daymor.sakura-boot</groupId>
     <artifactId>sakura-boot-starter-predefined-basic-integration-test</artifactId>
     <version>{release-version}</version>
     <scope>test</scope>
@@ -119,7 +119,7 @@ This includes all the modules of sakura boot, the necessary spring boot starter,
 [,xml,subs=+attributes]
 ----
 <dependency>
-    <groupId>org.sansenshimizu.sakuraboot</groupId>
+    <groupId>dev.daymor.sakura-boot</groupId>
     <artifactId>sakura-boot-starter-predefined-all-module-integration-test</artifactId>
     <version>{release-version}</version>
     <scope>test</scope>
@@ -137,7 +137,7 @@ This includes only the basic functionalities of sakura boot.
 [,xml,subs=+attributes]
 ----
 <dependency>
-    <groupId>org.sansenshimizu.sakuraboot</groupId>
+    <groupId>dev.daymor.sakura-boot</groupId>
     <artifactId>sakura-boot-starter-basic-functional-test</artifactId>
     <version>{release-version}</version>
     <scope>test</scope>
@@ -149,7 +149,7 @@ This includes all the modules of sakura boot.
 [,xml,subs=+attributes]
 ----
 <dependency>
-    <groupId>org.sansenshimizu.sakuraboot</groupId>
+    <groupId>dev.daymor.sakura-boot</groupId>
     <artifactId>sakura-boot-starter-all-module-functional-test</artifactId>
     <version>{release-version}</version>
     <scope>test</scope>
@@ -163,7 +163,7 @@ This includes only the basic functionalities of sakura boot.
 [,xml,subs=+attributes]
 ----
 <dependency>
-    <groupId>org.sansenshimizu.sakuraboot</groupId>
+    <groupId>dev.daymor.sakuraboot</groupId>
     <artifactId>sakura-boot-starter-basic-integration-test</artifactId>
     <version>{release-version}</version>
     <scope>test</scope>
@@ -175,7 +175,7 @@ This includes all the modules of sakura boot.
 [,xml,subs=+attributes]
 ----
 <dependency>
-    <groupId>org.sansenshimizu.sakuraboot</groupId>
+    <groupId>dev.daymor.sakuraboot</groupId>
     <artifactId>sakura-boot-starter-all-module-integration-test</artifactId>
     <version>{release-version}</version>
     <scope>test</scope>
@@ -189,7 +189,7 @@ This includes only the basic functionalities of sakura boot.
 [,xml,subs=+attributes]
 ----
 <dependency>
-    <groupId>org.sansenshimizu.sakuraboot</groupId>
+    <groupId>dev.daymor.sakuraboot</groupId>
     <artifactId>sakura-boot-starter-basic-unit-test</artifactId>
     <version>{release-version}</version>
     <scope>test</scope>
@@ -201,7 +201,7 @@ This includes all the modules of sakura boot.
 [,xml,subs=+attributes]
 ----
 <dependency>
-    <groupId>org.sansenshimizu.sakuraboot</groupId>
+    <groupId>dev.daymor.sakuraboot</groupId>
     <artifactId>sakura-boot-starter-all-module-unit-test</artifactId>
     <version>{release-version}</version>
     <scope>test</scope>
@@ -217,7 +217,7 @@ This includes the basic module with the core and log module of sakura boot and o
 [,xml,subs=+attributes]
 ----
 <dependency>
-    <groupId>org.sansenshimizu.sakuraboot</groupId>
+    <groupId>dev.daymor.sakuraboot</groupId>
     <artifactId>sakura-boot-basic</artifactId>
     <version>{release-version}</version>
 </dependency>
@@ -254,14 +254,14 @@ This includes the basic functionalities of sakura boot, the necessary spring boo
 
 [,kotlin,subs=+attributes]
 ----
-implementation("org.sansenshimizu.sakuraboot:sakura-boot-starter-predefined-basic:{release-version}")
+implementation("dev.daymor.sakuraboot:sakura-boot-starter-predefined-basic:{release-version}")
 ----
 
 This includes all the modules of sakura boot, the necessary spring boot starter, mapstruct, ehcache3 as cache provider, and a runtime postgresql.
 
 [,kotlin,subs=+attributes]
 ----
-implementation("org.sansenshimizu.sakuraboot:sakura-boot-starter-predefined-all-module:{release-version}")
+implementation("dev.daymor.sakuraboot:sakura-boot-starter-predefined-all-module:{release-version}")
 ----
 
 === Custom dependencies
@@ -272,14 +272,14 @@ This includes only the basic functionalities of sakura boot.
 
 [,kotlin,subs=+attributes]
 ----
-implementation("org.sansenshimizu.sakuraboot:sakura-boot-starter-basic:{release-version}")
+implementation("dev.daymor.sakuraboot:sakura-boot-starter-basic:{release-version}")
 ----
 
 This includes all the modules of sakura boot.
 
 [,kotlin,subs=+attributes]
 ----
-implementation("org.sansenshimizu.sakuraboot:sakura-boot-starter-all-module:{release-version}")
+implementation("dev.daymor.sakuraboot:sakura-boot-starter-all-module:{release-version}")
 ----
 
 === Test dependencies
@@ -298,14 +298,14 @@ This includes the basic functionalities of sakura boot, the necessary spring boo
 
 [,kotlin,subs=+attributes]
 ----
-functionalTestImplementation("org.sansenshimizu.sakuraboot:sakura-boot-starter-predefined-basic-functional-test:{release-version}")
+functionalTestImplementation("dev.daymor.sakuraboot:sakura-boot-starter-predefined-basic-functional-test:{release-version}")
 ----
 
 This includes all the modules of sakura boot, the necessary spring boot starter, mapstruct, and a runtime postgresql test container.
 
 [,kotlin,subs=+attributes]
 ----
-functionalTestImplementation("org.sansenshimizu.sakuraboot:sakura-boot-starter-predefined-all-module-functional-test:{release-version}")
+functionalTestImplementation("dev.daymor.sakuraboot:sakura-boot-starter-predefined-all-module-functional-test:{release-version}")
 ----
 
 ===== Integration tests
@@ -314,14 +314,14 @@ This includes the basic functionalities of sakura boot, the necessary spring boo
 
 [,kotlin,subs=+attributes]
 ----
-integrationTestImplementation("org.sansenshimizu.sakuraboot:sakura-boot-starter-predefined-basic-integration-test:{release-version}")
+integrationTestImplementation("dev.daymor.sakuraboot:sakura-boot-starter-predefined-basic-integration-test:{release-version}")
 ----
 
 This includes all the modules of sakura boot, the necessary spring boot starter, mapstruct, and a runtime h2 in-memory database.
 
 [,kotlin,subs=+attributes]
 ----
-integrationTestImplementation("org.sansenshimizu.sakuraboot:sakura-boot-starter-predefined-all-module-integration-test:{release-version}")
+integrationTestImplementation("dev.daymor.sakuraboot:sakura-boot-starter-predefined-all-module-integration-test:{release-version}")
 ----
 
 ==== Custom dependencies
@@ -334,14 +334,14 @@ This includes only the basic functionalities of sakura boot.
 
 [,kotlin,subs=+attributes]
 ----
-functionalTestImplementation("org.sansenshimizu.sakuraboot:sakura-boot-starter-basic-functional-test:{release-version}")
+functionalTestImplementation("dev.daymor.sakuraboot:sakura-boot-starter-basic-functional-test:{release-version}")
 ----
 
 This includes all the modules of sakura boot.
 
 [,kotlin,subs=+attributes]
 ----
-functionalTestImplementation("org.sansenshimizu.sakuraboot:sakura-boot-starter-all-module-functional-test:{release-version}")
+functionalTestImplementation("dev.daymor.sakuraboot:sakura-boot-starter-all-module-functional-test:{release-version}")
 ----
 
 ===== Integration tests
@@ -350,14 +350,14 @@ This includes only the basic functionalities of sakura boot.
 
 [,kotlin,subs=+attributes]
 ----
-integrationTestImplementation("org.sansenshimizu.sakuraboot:sakura-boot-starter-basic-integration-test:{release-version}")
+integrationTestImplementation("dev.daymor.sakuraboot:sakura-boot-starter-basic-integration-test:{release-version}")
 ----
 
 This includes all the modules of sakura boot.
 
 [,kotlin,subs=+attributes]
 ----
-integrationTestImplementation("org.sansenshimizu.sakuraboot:sakura-boot-starter-all-module-integration-test:{release-version}")
+integrationTestImplementation("dev.daymor.sakuraboot:sakura-boot-starter-all-module-integration-test:{release-version}")
 ----
 
 ===== Unit tests
@@ -366,14 +366,14 @@ This includes only the basic functionalities of sakura boot.
 
 [,kotlin,subs=+attributes]
 ----
-testImplementation("org.sansenshimizu.sakuraboot:sakura-boot-starter-basic-unit-test:{release-version}")
+testImplementation("dev.daymor.sakuraboot:sakura-boot-starter-basic-unit-test:{release-version}")
 ----
 
 This includes all the modules of sakura boot.
 
 [,kotlin,subs=+attributes]
 ----
-testImplementation("org.sansenshimizu.sakuraboot:sakura-boot-starter-predefined-all-module-unit-test:{release-version}")
+testImplementation("dev.daymor.sakuraboot:sakura-boot-starter-predefined-all-module-unit-test:{release-version}")
 ----
 
 === Customisation
@@ -384,7 +384,7 @@ This includes the basic module with the core and log module of sakura boot and o
 
 [,kotlin,subs=+attributes]
 ----
-implementation("org.sansenshimizu.sakuraboot:sakura-boot-basic:{release-version}")
+implementation("dev.daymor.sakuraboot:sakura-boot-basic:{release-version}")
 ----
 
 The same can be applied with all the other modules of sakura boot. +

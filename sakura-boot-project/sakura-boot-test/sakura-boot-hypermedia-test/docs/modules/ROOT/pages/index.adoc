@@ -1,5 +1,5 @@
 = Sakura Boot — hypermedia — test
-Malcolm Rozé <malcolm@sansenshimizu.com>
+Malcolm Rozé <sakura-boot@daymor.dev>
 :description: Sakura Boot — hypermedia test module — main page documentation
 
 [discrete]

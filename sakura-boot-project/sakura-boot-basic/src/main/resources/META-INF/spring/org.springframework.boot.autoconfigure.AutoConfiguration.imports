@@ -1,4 +1,4 @@
-org.sansenshimizu.sakuraboot.exceptions.SuperControllerExceptionHandler
-org.sansenshimizu.sakuraboot.basic.aop.RelationshipAspect
-org.sansenshimizu.sakuraboot.basic.aop.SaveRelationshipAspect
-org.sansenshimizu.sakuraboot.basic.configuration.BasicConfiguration
+dev.daymor.sakuraboot.exceptions.SuperControllerExceptionHandler
+dev.daymor.sakuraboot.basic.aop.RelationshipAspect
+dev.daymor.sakuraboot.basic.aop.SaveRelationshipAspect
+dev.daymor.sakuraboot.basic.configuration.BasicConfiguration

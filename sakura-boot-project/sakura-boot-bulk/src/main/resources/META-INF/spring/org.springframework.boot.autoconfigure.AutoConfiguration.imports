@@ -1,2 +1,2 @@
-org.sansenshimizu.sakuraboot.bulk.aop.SaveAllRelationshipAspect
-org.sansenshimizu.sakuraboot.bulk.configuration.BulkConfiguration
+dev.daymor.sakuraboot.bulk.aop.SaveAllRelationshipAspect
+dev.daymor.sakuraboot.bulk.configuration.BulkConfiguration

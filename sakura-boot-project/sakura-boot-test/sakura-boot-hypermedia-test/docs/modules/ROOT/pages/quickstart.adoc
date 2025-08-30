@@ -1,5 +1,5 @@
 = Quickstart
-Malcolm Rozé <malcolm@sansenshimizu.com>
+Malcolm Rozé <sakura-boot@daymor.dev>
 :description: Sakura Boot — hypermedia test module — quickstart page documentation
 
 The quickstart documentation will be updated soon.

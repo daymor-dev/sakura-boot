@@ -1,0 +1,66 @@
+/*
+ * Copyright (C) 2023-2024 Malcolm Rozé.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package dev.daymor.sakuraboot.example.complexallmodule.presentation.filter;
+
+import java.io.Serial;
+
+import lombok.Builder;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import org.springframework.lang.Nullable;
+
+import dev.daymor.sakuraboot.specification.api.presentation.filters.UUIDFilter;
+import dev.daymor.sakuraboot.specification.presentation.AbstractBasicFilter;
+import dev.daymor.sakuraboot.specification.presentation.filters.DateFilterImpl;
+import dev.daymor.sakuraboot.specification.presentation.filters.NumberFilterImpl;
+import dev.daymor.sakuraboot.specification.presentation.filters.TextFilterImpl;
+import dev.daymor.sakuraboot.specification.presentation.filters.UUIDFilterImpl;
+
+@Builder(toBuilder = true)
+@RequiredArgsConstructor
+@Getter
+@EqualsAndHashCode(callSuper = true)
+public class HobbyFilter extends AbstractBasicFilter<UUIDFilter> {
+
+    @Serial
+    private static final long serialVersionUID = -7056599975876114239L;
+
+    @EqualsAndHashCode.Exclude
+    @Nullable
+    private final Boolean distinct;
+
+    @EqualsAndHashCode.Exclude
+    @Nullable
+    private final Boolean inclusive;
+
+    @EqualsAndHashCode.Exclude
+    @Nullable
+    private final UUIDFilterImpl id;
+
+    @Nullable
+    private final FederationFilter federations;
+
+    @Nullable
+    private final TextFilterImpl name;
+
+    @Nullable
+    private final NumberFilterImpl<Float> participationRate;
+
+    @Nullable
+    private final DateFilterImpl lastUpdated;
+}

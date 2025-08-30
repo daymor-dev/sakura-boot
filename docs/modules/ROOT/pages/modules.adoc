@@ -1,5 +1,5 @@
 = Modules
-Malcolm Rozé <malcolm@sansenshimizu.com>
+Malcolm Rozé <sakura-boot@daymor.dev>
 :description: Sakura Boot modules page documentation
 
 Sakura Boot is a modular framework. +

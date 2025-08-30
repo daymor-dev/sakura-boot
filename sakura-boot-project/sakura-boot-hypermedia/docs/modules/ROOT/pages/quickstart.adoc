@@ -1,5 +1,5 @@
 = Quickstart
-Malcolm Rozé <malcolm@sansenshimizu.com>
+Malcolm Rozé <sakura-boot@daymor.dev>
 :description: Sakura Boot — hypermedia module — quickstart page documentation
 
 The quickstart documentation will demonstrate how to install and use Sakura Boot with the hypermedia module to create a simple rest API application with links.
@@ -72,12 +72,12 @@ And the hypermedia module for the second dependency.
 [,xml,subs=+attributes]
 ----
 <dependency>
-    <groupId>org.sansenshimizu.sakuraboot</groupId>
+    <groupId>dev.daymor.sakuraboot</groupId>
     <artifactId>sakura-boot-starter-predefined-basic</artifactId>
     <version>{release-version}</version>
 </dependency>
 <dependency>
-    <groupId>org.sansenshimizu.sakuraboot</groupId>
+    <groupId>dev.daymor.sakuraboot</groupId>
     <artifactId>sakura-boot-hypermedia</artifactId>
     <version>{release-version}</version>
 </dependency>
@@ -88,7 +88,7 @@ This includes all the modules of sakura boot, the necessary spring boot starter,
 [,xml,subs=+attributes]
 ----
 <dependency>
-    <groupId>org.sansenshimizu.sakuraboot</groupId>
+    <groupId>dev.daymor.sakuraboot</groupId>
     <artifactId>sakura-boot-starter-predefined-all-module</artifactId>
     <version>{release-version}</version>
 </dependency>
@@ -101,15 +101,15 @@ And the hypermedia module for the second dependency.
 
 [,kotlin,subs=+attributes]
 ----
-implementation("org.sansenshimizu.sakuraboot:sakura-boot-starter-predefined-basic:{release-version}")
-implementation("org.sansenshimizu.sakuraboot:sakura-boot-hypermedia:{release-version}")
+implementation("dev.daymor.sakuraboot:sakura-boot-starter-predefined-basic:{release-version}")
+implementation("dev.daymor.sakuraboot:sakura-boot-hypermedia:{release-version}")
 ----
 
 This includes all the modules of sakura boot, the necessary spring boot starter, mapstruct, ehcache3 as cache provider, and a runtime postgresql.
 
 [,kotlin,subs=+attributes]
 ----
-implementation("org.sansenshimizu.sakuraboot:sakura-boot-starter-predefined-all-module:{release-version}")
+implementation("dev.daymor.sakuraboot:sakura-boot-starter-predefined-all-module:{release-version}")
 ----
 
 TIP: Maven is recommended for developers who never use both Maven and Gradle.
@@ -139,12 +139,12 @@ Here is a simple pom.xml file that includes the predefined basic module starter 
   </properties>
   <dependencies>
     <dependency>
-        <groupId>org.sansenshimizu.sakuraboot</groupId>
+        <groupId>dev.daymor.sakuraboot</groupId>
         <artifactId>sakura-boot-starter-predefined-basic</artifactId>
         <version>{release-version}</version>
     </dependency>
     <dependency>
-        <groupId>org.sansenshimizu.sakuraboot</groupId>
+        <groupId>dev.daymor.sakuraboot</groupId>
         <artifactId>sakura-boot-hypermedia</artifactId>
         <version>{release-version}</version>
     </dependency>
@@ -233,8 +233,8 @@ repositories {
 }
 
 dependencies {
-  implementation("org.sansenshimizu.sakuraboot:sakura-boot-starter-predefined-basic:{release-version}")
-  implementation("org.sansenshimizu.sakuraboot:sakura-boot-hypermedia:{release-version}")
+  implementation("dev.daymor.sakuraboot:sakura-boot-starter-predefined-basic:{release-version}")
+  implementation("dev.daymor.sakuraboot:sakura-boot-hypermedia:{release-version}")
   compileOnly("org.projectlombok:lombok")
   developmentOnly("org.springframework.boot:spring-boot-devtools")
   developmentOnly("org.springframework.boot:spring-boot-docker-compose")
@@ -274,8 +274,8 @@ import java.util.UUID;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import org.sansenshimizu.sakuraboot.basic.api.presentation.BasicController;
-import org.sansenshimizu.sakuraboot.hypermedia.api.Hypermedia;
+import dev.daymor.sakuraboot.basic.api.presentation.BasicController;
+import dev.daymor.sakuraboot.hypermedia.api.Hypermedia;
 
 import com.example.demo.business.SimpleService;
 import com.example.demo.persistence.SimpleEntity;
@@ -325,7 +325,7 @@ import java.io.Serial;
 
 import org.springframework.hateoas.server.core.Relation;
 
-import org.sansenshimizu.sakuraboot.hypermedia.AbstractBasicModel;
+import dev.daymor.sakuraboot.hypermedia.AbstractBasicModel;
 
 import com.example.demo.persistence.SimpleEntity;
 
@@ -353,7 +353,7 @@ import java.util.function.Function;
 
 import org.springframework.stereotype.Component;
 
-import org.sansenshimizu.sakuraboot.hypermedia.AbstractBasicModelAssembler;
+import dev.daymor.sakuraboot.hypermedia.AbstractBasicModelAssembler;
 
 import com.example.demo.persistence.SimpleEntity;
 

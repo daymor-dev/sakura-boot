@@ -1,11 +1,11 @@
 site:
-  url: https://sakuraboot.sansenshimizu.org/
+  url: https://sakura-boot.daymor.dev/
   title: Sakura Boot
   start_page: sakura-boot::index.adoc
   robots: allow
 content:
   sources:
-    - url: ./.. #https://github.com/Sansen-Shimizu/sakura-boot.git
+    - url: ./.. #https://github.com/daymor-dev/sakura-boot.git
       branches: [ HEAD, '0.*', '!0.1.x' ]
       start_paths:
         - docs

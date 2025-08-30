@@ -1,5 +1,5 @@
 = Installation
-Malcolm Rozé <malcolm@sansenshimizu.com>
+Malcolm Rozé <sakura-boot@daymor.dev>
 :description: Sakura Boot — mapper test module — installation page documentation
 
 The installation documentation will be updated soon.

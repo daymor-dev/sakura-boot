@@ -1,4 +1,4 @@
-import org.sansenshimizu.gradle.util.ProjectUtils.aggregateDir
+import dev.daymor.gradle.util.ProjectUtils.aggregateDir
 
 plugins {
     java

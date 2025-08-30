@@ -1,5 +1,5 @@
 = Sakura Boot
-Malcolm Rozé <malcolm@sansenshimizu.com>
+Malcolm Rozé <sakura-boot@daymor.dev>
 :description: Sakura Boot main page documentation
 
 [discrete]
@@ -19,7 +19,7 @@ Then, gradually add custom logic or modify the default behavior if necessary. +
 
 The framework can help developers who’re already familiar with Spring Boot or not to speed up the development for proof-of-concept, prototype, and single or multiple applications while ensuring that the code adheres to best practices.
 
-For more information, see the https://sakuraboot.sansenshimizu.org[Sakura Boot] main page. +
+For more information, see the https://sakura-boot.daymor.dev[Sakura Boot] main page. +
 For more information on Spring Boot, see https://spring.io/projects/spring-boot[window=_blank].
 
 == Getting started

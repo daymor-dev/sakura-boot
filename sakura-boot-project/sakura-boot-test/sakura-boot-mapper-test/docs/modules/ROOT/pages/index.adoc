@@ -1,5 +1,5 @@
 = Sakura Boot — mapper — test
-Malcolm Rozé <malcolm@sansenshimizu.com>
+Malcolm Rozé <sakura-boot@daymor.dev>
 :description: Sakura Boot — mapper test module — main page documentation
 
 [discrete]

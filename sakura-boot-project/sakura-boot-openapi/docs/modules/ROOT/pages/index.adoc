@@ -1,5 +1,5 @@
 = Sakura Boot — openapi
-Malcolm Rozé <malcolm@sansenshimizu.com>
+Malcolm Rozé <sakura-boot@daymor.dev>
 :description: Sakura Boot — openapi module — main page documentation
 
 [discrete]

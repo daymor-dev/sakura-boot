@@ -101,43 +101,43 @@ swagger-models-jakarta = { module = "io.swagger.core.v3:swagger-models-jakarta",
 testcontainers-postgresql = { module = "org.testcontainers:postgresql" }
 
 [plugins]
-base-dependency-rules = { id = "org.sansenshimizu.gradle.base.dependency-rules" }
-base-identity = { id = "org.sansenshimizu.gradle.base.identity" }
-base-lifecycle = { id = "org.sansenshimizu.gradle.base.lifecycle" }
-base-lifecycle-root = { id = "org.sansenshimizu.gradle.base.lifecycle.root" }
+base-dependency-rules = { id = "dev.daymor.gradle.base.dependency-rules" }
+base-identity = { id = "dev.daymor.gradle.base.identity" }
+base-lifecycle = { id = "dev.daymor.gradle.base.lifecycle" }
+base-lifecycle-root = { id = "dev.daymor.gradle.base.lifecycle.root" }
 
-check-dependencies = { id = "org.sansenshimizu.gradle.check.dependencies" }
-check-dependencies-root = { id = "org.sansenshimizu.gradle.check.dependencies.root" }
-check-format-gradle = { id = "org.sansenshimizu.gradle.check.format-gradle" }
-check-format-gradle-root = { id = "org.sansenshimizu.gradle.check.format-gradle.root" }
-check-format-java = { id = "org.sansenshimizu.gradle.check.format-java" }
+check-dependencies = { id = "dev.daymor.gradle.check.dependencies" }
+check-dependencies-root = { id = "dev.daymor.gradle.check.dependencies.root" }
+check-format-gradle = { id = "dev.daymor.gradle.check.format-gradle" }
+check-format-gradle-root = { id = "dev.daymor.gradle.check.format-gradle.root" }
+check-format-java = { id = "dev.daymor.gradle.check.format-java" }
 
-component-application = { id = "org.sansenshimizu.gradle.component.application" }
-component-framework = { id = "org.sansenshimizu.gradle.component.framework" }
-component-starter = { id = "org.sansenshimizu.gradle.component.starter" }
+component-application = { id = "dev.daymor.gradle.component.application" }
+component-framework = { id = "dev.daymor.gradle.component.framework" }
+component-starter = { id = "dev.daymor.gradle.component.starter" }
 
-dependency-lombok = { id = "org.sansenshimizu.gradle.dependency.lombok" }
-dependency-lombok-test = { id = "org.sansenshimizu.gradle.dependency.lombok-test" }
-dependency-spring-boot-development = { id = "org.sansenshimizu.gradle.dependency.spring-boot-development" }
+dependency-lombok = { id = "dev.daymor.gradle.dependency.lombok" }
+dependency-lombok-test = { id = "dev.daymor.gradle.dependency.lombok-test" }
+dependency-spring-boot-development = { id = "dev.daymor.gradle.dependency.spring-boot-development" }
 
-feature-antora = { id = "org.sansenshimizu.gradle.feature.antora" }
-feature-antora-ui = { id = "org.sansenshimizu.gradle.feature.antora-ui" }
-feature-compile-java = { id = "org.sansenshimizu.gradle.feature.compile-java" }
-feature-javadoc = { id = "org.sansenshimizu.gradle.feature.javadoc" }
-feature-publish = { id = "org.sansenshimizu.gradle.feature.publish" }
-feature-publish-java = { id = "org.sansenshimizu.gradle.feature.publish-java" }
-feature-spring-boot = { id = "org.sansenshimizu.gradle.feature.spring-boot" }
-feature-use-all-catalog-versions = { id = "org.sansenshimizu.gradle.feature.use-all-catalog-versions" }
+feature-antora = { id = "dev.daymor.gradle.feature.antora" }
+feature-antora-ui = { id = "dev.daymor.gradle.feature.antora-ui" }
+feature-compile-java = { id = "dev.daymor.gradle.feature.compile-java" }
+feature-javadoc = { id = "dev.daymor.gradle.feature.javadoc" }
+feature-publish = { id = "dev.daymor.gradle.feature.publish" }
+feature-publish-java = { id = "dev.daymor.gradle.feature.publish-java" }
+feature-spring-boot = { id = "dev.daymor.gradle.feature.spring-boot" }
+feature-use-all-catalog-versions = { id = "dev.daymor.gradle.feature.use-all-catalog-versions" }
 
-report-code-coverage = { id = "org.sansenshimizu.gradle.report.code-coverage" }
-report-plugin-analysis = { id = "org.sansenshimizu.gradle.report.plugin-analysis" }
-report-sbom = { id = "org.sansenshimizu.gradle.report.sbom" }
-report-test = { id = "org.sansenshimizu.gradle.report.test" }
+report-code-coverage = { id = "dev.daymor.gradle.report.code-coverage" }
+report-plugin-analysis = { id = "dev.daymor.gradle.report.plugin-analysis" }
+report-sbom = { id = "dev.daymor.gradle.report.sbom" }
+report-test = { id = "dev.daymor.gradle.report.test" }
 
-test-all-test = { id = "org.sansenshimizu.gradle.test.all-test" }
-test-end-to-end-test = { id = "org.sansenshimizu.gradle.test.end-to-end-test" }
-test-functional-test = { id = "org.sansenshimizu.gradle.test.functional-test" }
-test-integration-test = { id = "org.sansenshimizu.gradle.test.integration-test" }
-test-performance-test = { id = "org.sansenshimizu.gradle.test.performance-test" }
-test-test = { id = "org.sansenshimizu.gradle.test.test" }
-test-test-fixtures = { id = "org.sansenshimizu.gradle.test.test-fixtures" }
+test-all-test = { id = "dev.daymor.gradle.test.all-test" }
+test-end-to-end-test = { id = "dev.daymor.gradle.test.end-to-end-test" }
+test-functional-test = { id = "dev.daymor.gradle.test.functional-test" }
+test-integration-test = { id = "dev.daymor.gradle.test.integration-test" }
+test-performance-test = { id = "dev.daymor.gradle.test.performance-test" }
+test-test = { id = "dev.daymor.gradle.test.test" }
+test-test-fixtures = { id = "dev.daymor.gradle.test.test-fixtures" }

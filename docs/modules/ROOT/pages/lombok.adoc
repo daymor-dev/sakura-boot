@@ -1,5 +1,5 @@
 = Lombok
-Malcolm Rozé <malcolm@sansenshimizu.com>
+Malcolm Rozé <sakura-boot@daymor.dev>
 :description: Sakura Boot lombok page documentation
 
 https://projectlombok.org/[Lombok,window=_blank] is a great library for code generation.

@@ -1,5 +1,5 @@
 = Quickstart
-Malcolm Rozé <malcolm@sansenshimizu.com>
+Malcolm Rozé <sakura-boot@daymor.dev>
 :description: Sakura Boot — openapi module — quickstart page documentation
 
 The quickstart documentation will demonstrate how to install and use Sakura Boot with the openapi module to create a simple API application with documentation.
@@ -31,12 +31,12 @@ And the openapi module for the second dependency.
 [,xml,subs=+attributes]
 ----
 <dependency>
-    <groupId>org.sansenshimizu.sakuraboot</groupId>
+    <groupId>dev.daymor.sakuraboot</groupId>
     <artifactId>sakura-boot-starter-predefined-basic</artifactId>
     <version>{release-version}</version>
 </dependency>
 <dependency>
-    <groupId>org.sansenshimizu.sakuraboot</groupId>
+    <groupId>dev.daymor.sakuraboot</groupId>
     <artifactId>sakura-boot-openapi</artifactId>
     <version>{release-version}</version>
 </dependency>
@@ -47,7 +47,7 @@ This includes all the modules of sakura boot, the necessary spring boot starter,
 [,xml,subs=+attributes]
 ----
 <dependency>
-    <groupId>org.sansenshimizu.sakuraboot</groupId>
+    <groupId>dev.daymor.sakuraboot</groupId>
     <artifactId>sakura-boot-starter-predefined-all-module</artifactId>
     <version>{release-version}</version>
 </dependency>
@@ -60,15 +60,15 @@ And the openapi module for the second dependency.
 
 [,kotlin,subs=+attributes]
 ----
-implementation("org.sansenshimizu.sakuraboot:sakura-boot-starter-predefined-basic:{release-version}")
-implementation("org.sansenshimizu.sakuraboot:sakura-boot-openapi:{release-version}")
+implementation("dev.daymor.sakuraboot:sakura-boot-starter-predefined-basic:{release-version}")
+implementation("dev.daymor.sakuraboot:sakura-boot-openapi:{release-version}")
 ----
 
 This includes all the modules of sakura boot, the necessary spring boot starter, mapstruct, ehcache3 as cache provider, and a runtime postgresql.
 
 [,kotlin,subs=+attributes]
 ----
-implementation("org.sansenshimizu.sakuraboot:sakura-boot-starter-predefined-all-module:{release-version}")
+implementation("dev.daymor.sakuraboot:sakura-boot-starter-predefined-all-module:{release-version}")
 ----
 
 TIP: Maven is recommended for developers who never use both Maven and Gradle.
@@ -98,12 +98,12 @@ Here is a simple pom.xml file that includes the predefined basic module starter 
   </properties>
   <dependencies>
     <dependency>
-        <groupId>org.sansenshimizu.sakuraboot</groupId>
+        <groupId>dev.daymor.sakuraboot</groupId>
         <artifactId>sakura-boot-starter-predefined-basic</artifactId>
         <version>{release-version}</version>
     </dependency>
     <dependency>
-        <groupId>org.sansenshimizu.sakuraboot</groupId>
+        <groupId>dev.daymor.sakuraboot</groupId>
         <artifactId>sakura-boot-openapi</artifactId>
         <version>{release-version}</version>
     </dependency>
@@ -192,8 +192,8 @@ repositories {
 }
 
 dependencies {
-  implementation("org.sansenshimizu.sakuraboot:sakura-boot-starter-predefined-basic:{release-version}")
-  implementation("org.sansenshimizu.sakuraboot:sakura-boot-openapi:{release-version}")
+  implementation("dev.daymor.sakuraboot:sakura-boot-starter-predefined-basic:{release-version}")
+  implementation("dev.daymor.sakuraboot:sakura-boot-openapi:{release-version}")
   compileOnly("org.projectlombok:lombok")
   developmentOnly("org.springframework.boot:spring-boot-devtools")
   developmentOnly("org.springframework.boot:spring-boot-docker-compose")
@@ -248,7 +248,7 @@ spring.jpa.hibernate.ddl-auto = create-drop
 #spring.jpa.show-sql = true
 #sakuraboot.exception.showStackTrace = true
 #logging.level.com.example.demo = DEBUG
-#logging.level.org.sansenshimizu.sakuraboot = DEBUG
+#logging.level.dev.daymor.sakuraboot = DEBUG
 #logging.level.root = warn
 ----
 
