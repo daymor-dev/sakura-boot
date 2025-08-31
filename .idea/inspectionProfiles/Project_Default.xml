@@ -234,8 +234,8 @@
       <option name="ignorableAnnotations">
         <value>
           <item value="org.aspectj.lang.annotation.Around" />
-          <item value="org.sansenshimizu.sakuraboot.mapper.relationship.one.annotations.RelationshipFromEntityWithEntity" />
-          <item value="org.sansenshimizu.sakuraboot.mapper.relationship.one.annotations.RelationshipFromEntityWithId" />
+          <item value="dev.daymor.sakuraboot.mapper.relationship.one.annotations.RelationshipFromEntityWithEntity" />
+          <item value="dev.daymor.sakuraboot.mapper.relationship.one.annotations.RelationshipFromEntityWithId" />
           <item value="org.springframework.beans.factory.annotation.Autowired" />
         </value>
       </option>
@@ -329,7 +329,7 @@
       <option name="useParameterizedTypeForCollectionMethods" value="true" />
       <option name="doNotWeakenToJavaLangObject" value="true" />
       <option name="onlyWeakentoInterface" value="true" />
-      <stopClasses>org.sansenshimizu.sakuraboot.Loggable.Logging,java.lang.String,org.sansenshimizu.sakuraboot.log.annotations.Logging,java.lang.reflect.Field,java.lang.StringBuilder</stopClasses>
+      <stopClasses>dev.daymor.sakuraboot.Loggable.Logging,java.lang.String,dev.daymor.sakuraboot.log.annotations.Logging,java.lang.reflect.Field,java.lang.StringBuilder</stopClasses>
     </inspection_tool>
     <inspection_tool class="TypeParameterExtendsFinalClass" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="UnnecessarilyQualifiedStaticUsage" enabled="true" level="WARNING" enabled_by_default="true">

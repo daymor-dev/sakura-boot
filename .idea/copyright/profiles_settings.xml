@@ -1,5 +1,5 @@
 <component name="CopyrightManager">
-  <settings>
+  <settings default="java">
     <module2copyright>
       <element module="java" copyright="java" />
     </module2copyright>

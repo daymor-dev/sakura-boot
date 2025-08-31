@@ -25,7 +25,7 @@
           <emptyLine />
           <package name="" withSubpackages="true" static="false" />
           <emptyLine />
-          <package name="org.sansenshimizu.sakuraboot" withSubpackages="true" static="false" />
+          <package name="dev.daymor.sakuraboot" withSubpackages="true" static="false" />
           <emptyLine />
           <package name="" withSubpackages="true" static="true" />
         </value>
