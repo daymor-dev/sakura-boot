@@ -1,0 +1,12 @@
+{
+  "name": "Sakura Boot",
+  "image": "mcr.microsoft.com/devcontainers/java:21",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {}
+  },
+  
+  "postCreateCommand": "npm install -g @anthropic-ai/claude-code",
+  
+  "postStartCommand": "echo 'Run: claude login' && echo 'Then: claude'"
+}
