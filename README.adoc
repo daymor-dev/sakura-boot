@@ -153,6 +153,33 @@ All the classes are well-documented with Javadoc and example.
 
 link:./example-project/[Example projects] are available to help understand how to use the framework in different basic situations.
 
+== AI-Powered Development with Claude Code
+
+Sakura Boot leverages Claude Code, an AI-powered coding assistant, to accelerate development while maintaining high code quality and consistency. Claude Code acts as an external contributor, following all framework conventions and best practices.
+
+=== Why Claude Code?
+
+- **Faster Development**: Automate repetitive tasks like creating modules, tests, and documentation
+- **Quality Assurance**: Automatic code reviews and framework compliance checks
+- **Consistent Documentation**: Generate comprehensive Javadoc and Antora documentation
+- **Complete Testing**: Automatically create unit, integration, and functional tests
+- **Safe Contributions**: Built-in safeguards prevent accidental damage to critical code
+
+=== Features
+
+Claude Code is configured specifically for Sakura Boot with:
+
+- Custom commands for framework-specific tasks
+- Automated issue and sub-issue creation
+- Pull request generation with proper formatting
+- Code review capabilities
+- Three specialized AI agents (architect, test engineer, documentation writer)
+- Git workflow integration
+
+=== Documentation
+
+For detailed instructions on using Claude Code with Sakura Boot, see the link:./CLAUDE_CODE_GUIDE.adoc[Claude Code Integration Guide].
+
 == Contribution and Code of conduct
 
 Contributions are welcome! +

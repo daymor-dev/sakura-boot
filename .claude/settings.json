@@ -1,0 +1,142 @@
+{
+  "defaultMode": "plan",
+  "permissions": {
+    "allow": [
+      "Read",
+      "Grep",
+      "Glob",
+      "LS",
+      "Edit(sakura-boot-*/src/**/*.java)",
+      "Edit(example-project/**/*.java)",
+      "Edit(docs/**/*.adoc)",
+      "Edit(docs/**/*.md)",
+      "Edit(**/*Test.java)",
+      "Edit(**/*IntegrationTest.java)",
+      "Edit(**/*FunctionalTest.java)",
+      "MultiEdit(sakura-boot-*/src/**/*.java)",
+      "Write(sakura-boot-*/src/**/*.java)",
+      "Write(example-project/**/*.java)",
+      "Write(docs/**/*.adoc)",
+      "Write(docs/**/*.md)",
+      "Write(**/*Test.java)",
+      "Write(**/*IntegrationTest.java)",
+      "Write(**/*FunctionalTest.java)",
+      "Bash(git status)",
+      "Bash(git log *)",
+      "Bash(git diff *)",
+      "Bash(git branch *)",
+      "Bash(git checkout *)",
+      "Bash(git fetch *)",
+      "Bash(git pull origin develop)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push origin feature/*)",
+      "Bash(git push origin bugfix/*)",
+      "Bash(git push origin docs/*)",
+      "Bash(./gradlew test *)",
+      "Bash(./gradlew build)",
+      "Bash(./gradlew spotlessCheck)",
+      "Bash(./gradlew spotlessApply)",
+      "Bash(./gradlew :*:test)",
+      "Bash(./gradlew :docs:antora)",
+      "Bash(gh issue *)",
+      "Bash(gh pr *)",
+      "Bash(java -version)",
+      "Bash(gradle -version)",
+      "WebFetch",
+      "WebSearch"
+    ],
+    "deny": [
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(secrets/**)",
+      "Read(**/*.key)",
+      "Read(**/*.pem)",
+      "Write(gradle.properties)",
+      "Write(settings.gradle)",
+      "Write(build.gradle)",
+      "Write(.github/workflows/*)",
+      "Edit(gradle.properties)",
+      "Edit(settings.gradle)",
+      "Edit(build.gradle)",
+      "Edit(.github/workflows/*)",
+      "Bash(rm -rf *)",
+      "Bash(sudo *)",
+      "Bash(git push --force *)",
+      "Bash(git push origin main)",
+      "Bash(git push origin develop)",
+      "Bash(git merge main)",
+      "Bash(git merge develop)",
+      "Bash(git rebase main)",
+      "Bash(curl *)",
+      "Bash(wget *)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash(git push *)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "branch=$(git branch --show-current); if [[ \"$branch\" == \"main\" ]]; then echo '{\"continue\": false, \"stopReason\": \"Cannot push to protected branch: '$branch'. Please use a feature branch.\"}'; exit 1; fi"
+          }
+        ]
+      },
+      {
+        "matcher": "Write(*.java)|Edit(*.java)|MultiEdit(*.java)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Java file will be modified. Remember to add tests and Javadoc!'"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write(*.java)|Edit(*.java)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./gradlew spotlessApply --quiet 2>/dev/null || true",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "Write(docs/**/*.adoc)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Documentation updated. Run ./gradlew :docs:antora to build.'",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Bash(git commit *)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Commit created. Remember to push to feature branch and create PR.'",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Sakura Boot: Claude needs your attention' >&2",
+            "timeout": 2
+          }
+        ]
+      }
+    ]
+  },
+  "customInstructions": "You are working on the Sakura Boot framework. Always follow the framework conventions, create comprehensive tests (unit, integration, functional), and update documentation. Never modify protected branches directly."
+}

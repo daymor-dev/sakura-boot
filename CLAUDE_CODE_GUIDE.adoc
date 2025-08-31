@@ -1,0 +1,249 @@
+= Claude Code Integration Guide for Sakura Boot
+:toc: left
+:toclevels: 3
+:icons: font
+:source-highlighter: highlight.js
+
+== Overview
+
+This guide explains how to use Claude Code as an AI-powered development assistant for contributing to the Sakura Boot framework. Claude Code acts as an external contributor, following all framework conventions and best practices.
+
+== Prerequisites
+
+Before starting, ensure you have:
+
+* [x] Java 21 installed
+* [x] Git configured
+* [x] GitHub CLI (`gh`) installed
+* [x] Node.js 18+ and npm
+* [x] Claude code install
+
+== Working with Claude Code
+
+=== Starting Claude Code
+
+[source,bash]
+----
+# Navigate to project root
+cd sakura-boot
+
+# Start Claude in plan mode (read-only, default)
+claude
+----
+
+=== Understanding Modes
+
+Claude Code operates in three modes:
+
+[cols="1,3,2"]
+|===
+|Mode |Description |Use Case
+
+|**Plan Mode**
+|Read-only operations, analysis, and planning
+|Code reviews, architecture decisions, understanding codebase
+
+|**Normal Mode**
+|Standard development with permission prompts
+|Feature implementation, bug fixes
+
+|**Auto Mode**
+|Automatic approval for configured operations
+|Repetitive tasks, testing
+|===
+
+Switch modes using:
+[source,bash]
+----
+/mode plan    # Read-only
+/mode normal  # Standard
+/mode auto    # Auto-approve
+----
+
+== Available Commands
+
+=== Core Development Commands
+
+[source,bash]
+----
+# List all available commands
+/project:list-commands
+
+# Implement a feature from issue #42
+/project:implement-feature 42
+
+# Create a new module
+/project:new-module pagination
+
+# Review a pull request
+/project:review-pr 123
+----
+
+=== Issue Management
+
+[source,bash]
+----
+# Create a new issue from description
+/project:create-issue
+"Add support for custom cache eviction policies"
+
+# Create sub-tasks for issue #42
+/project:create-sub-issues 42
+----
+
+=== Testing and Documentation
+
+[source,bash]
+----
+# Add comprehensive tests
+/project:add-tests
+
+# Update documentation
+/project:update-docs
+
+# Check framework compliance
+/project:check-framework
+----
+
+== Development Workflow
+
+=== 1. Starting New Feature
+
+[source,bash]
+----
+# Start Claude
+claude
+
+# Create or find issue
+/project:create-issue
+"Implement pagination support for REST endpoints"
+
+# Create sub-issues (assuming issue #50 was created)
+/project:create-sub-issues 50
+
+# Start implementation
+/project:implement-feature 50
+----
+
+=== 2. Working on Feature Branch
+
+[source,bash]
+----
+# Claude creates feature branch
+git checkout -b feature/issue-50-pagination
+
+# Switch to normal mode for implementation
+/mode normal
+
+# Implement with Claude's help
+"Implement the PaginationService following the existing service patterns"
+
+# Add tests
+/project:add-tests
+
+# Update documentation
+/project:update-docs
+----
+
+=== 3. Creating Pull Request
+
+[source,bash]
+----
+# Check everything
+/project:check-framework
+
+# Create PR
+/project:create-pr
+----
+
+=== 4. Code Review
+
+[source,bash]
+----
+# Start in plan mode for reviews
+claude --mode plan
+
+# Review a PR
+/project:review-pr 123
+
+# Provide specific feedback
+"Review the test coverage and suggest additional edge cases"
+----
+
+== Best Practices
+
+=== Context Management
+
+TIP: Clear context between different tasks to avoid confusion
+
+[source,bash]
+----
+# Clear context when switching tasks
+/clear
+
+# Start fresh for new feature
+"Now let's work on the caching improvements"
+----
+
+=== Using Git Worktrees
+
+For parallel development on multiple features:
+
+[source,bash]
+----
+# Create worktree for feature
+git worktree add ../sakura-feature-cache feature/cache-improvements
+cd ../sakura-feature-cache
+claude
+
+# Work on another feature in parallel
+git worktree add ../sakura-feature-auth feature/auth-module
+cd ../sakura-feature-auth
+claude
+----
+
+== Security Considerations
+
+Claude Code is configured with security restrictions:
+
+* Cannot modify main branches
+* Cannot force push
+* Cannot delete critical files
+* Cannot modify build configuration without approval
+* Can only push to feature branches
+* Read-only by default (plan mode)
+
+== Advanced Usage
+
+=== Custom Agents
+
+Use specialized agents for specific tasks:
+
+[source,bash]
+----
+# Use architect for design decisions
+/agent framework-architect
+"Review the module structure for the new feature"
+
+# Use test engineer for testing
+/agent test-engineer
+"Create comprehensive test suite for CacheService"
+
+# Use documentation writer
+/agent documentation-writer
+"Update the Antora documentation for the cache module"
+----
+
+=== Automation with Hooks
+
+Hooks automatically run commands:
+
+* **Post-write hooks**: Format code after changes
+* **Pre-bash hooks**: Validate before git operations
+* **Post-bash hooks**: Notifications after builds
+
+== Conclusion
+
+Claude Code significantly accelerates Sakura Boot development while maintaining high code quality. By following this guide, you can leverage AI assistance while ensuring all framework conventions are followed.
+
+Remember: Claude Code is a tool to augment your development, not replace your judgment. Always review generated code and ensure it meets project standards.
