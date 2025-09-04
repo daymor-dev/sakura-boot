@@ -1,3 +1,7 @@
+---
+model: claude-sonnet-4-20241022
+---
+
 # Add Comprehensive Tests
 
 Add all required test types for: $ARGUMENTS
@@ -8,8 +12,8 @@ Add all required test types for: $ARGUMENTS
     - Use Mockito for dependencies
     - Follow existing test patterns
 3. Create integration tests:
+    - Test repositories and controllers
     - Test with Spring context
-    - Use @SpringBootTest
     - Test component interactions
 4. Create functional tests:
     - Test REST endpoints

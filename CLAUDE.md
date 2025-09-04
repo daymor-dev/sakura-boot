@@ -1,10 +1,12 @@
 # Sakura Boot Framework - External Contributor Guidelines
 
 ## Your Role
+
 You are an external contributor to the Sakura Boot framework (dev.daymor.sakura-boot).
 This is a modular Spring Boot framework designed to reduce boilerplate and accelerate backend development.
 
 ### Core Rules:
+
 - NEVER modify the main branch directly
 - Always work on feature branches: feature/issue-{number}-{description}
 - Create issues before starting any work
@@ -12,14 +14,34 @@ This is a modular Spring Boot framework designed to reduce boilerplate and accel
 - Follow existing patterns and conventions religiously
 - Maintain backward compatibility
 
+### CRITICAL: Token Efficiency Rules
+
+- NO verbose output - Be concise, skip confirmations
+- NO explaining what you're doing - Just do it
+- NO listing files unless specifically asked
+
+### Forbidden Directories (DO NOT READ)
+
+- .git/
+- build/
+- .gradle/
+- node_modules/
+- target/
+- dist/
+- *.jar
+- *.class
+
 ## Framework Overview
+
 Sakura Boot is built on Spring Boot 3.x and provides:
+
 - Modular architecture for easy feature addition/removal
 - Convention over programming approach
 - Pre-built modules: caching, DTO mapping, filtering, logging, HATEOAS, OpenAPI
 - Comprehensive testing support (unit, integration, functional)
 
 ## Technology Stack
+
 - Java 21 (LTS)
 - Spring Boot 3.x
 - Gradle build system
@@ -30,6 +52,7 @@ Sakura Boot is built on Spring Boot 3.x and provides:
 - Antora (documentation)
 
 ## Module Structure
+
 ```
 sakura-boot/
 ├── sakura-boot-basic/
@@ -54,7 +77,9 @@ sakura-boot/
 ## Development Standards
 
 ### Javadoc Requirements
+
 EVERY public class, interface, and method MUST have comprehensive Javadoc, with example for class and interface:
+
 ```java
 /**
  * Brief description of the class/interface.
@@ -73,40 +98,46 @@ EVERY public class, interface, and method MUST have comprehensive Javadoc, with 
 ```
 
 ### Testing Requirements
+
 For EVERY feature, you MUST provide:
-1. **Unit Tests** (in `src/test/java`)
+
+1. **Unit Tests** (in `src/test/java` and in `sakura-boot-test/[module]-test`)
     - Test individual components in isolation
     - Use Mockito for mocking dependencies
     - Naming: `*Test.java`
 
-2. **Integration Tests** (in `[module]-test`)
-    - Test component interactions
-    - Use `@SpringBootTest`
+2. **Integration Tests** (in `sakura-boot-test/sakura-boot-integration-test`)
+    - Test repositories and controllers
+    - Use minimal spring context
     - Naming: `*IntegrationTest.java`
 
-3. **Functional Tests** (in `sakura-boot-functional-test`)
+3. **Functional Tests** (in `sakura-boot-test/sakura-boot-functional-test`)
     - End-to-end API testing
     - Use MockMvc or TestRestTemplate
     - Naming: `*FunctionalTest.java`
 
 ### Code Formatting
+
 - Use Google Java Style Guide
 - 4 spaces indentation (no tabs)
 - Max line length: 120 characters
 - Consistent use of final for immutability
 - Lombok annotations where appropriate
+- Use the same coding style as the previous files
 
 ### Documentation Updates
+
 For EVERY change, update:
+
 1. **Javadoc** - inline documentation
 2. **Antora docs** in `/docs` folder:
     - Module documentation in `docs/modules/[module-name]/`
     - Examples in `docs/modules/examples/`
     - API reference in `docs/modules/api/`
 3. **README.adoc** if adding new modules
-4. **CHANGELOG.adoc** with your changes
 
 ## Gradle Build Commands
+
 ```bash
 # Build entire project
 ./gradlew build
@@ -131,12 +162,14 @@ For EVERY change, update:
 ```
 
 ## Branch Strategy
+
 - `main` - stable releases only
 - `0.1.x` - version branch
 - `feature/*` - new features
 - `bugfix/*` - bug fixes
 
 ## Contribution Workflow
+
 1. Find or create issue in GitHub
 2. Create feature branch from develop
 3. Implement with tests and docs
@@ -147,13 +180,16 @@ For EVERY change, update:
 8. Address review comments
 
 ## Module Dependencies
+
 When working on a module, respect the dependency hierarchy:
+
 - `sakura-boot-core` - base for all modules
 - `sakura-boot-basic` - essential features
 - Other modules depend on basic and/or core
 - Starters aggregate modules for easy consumption
 
 ## Prohibited Actions
+
 - Direct commits to main or version branch
 - Breaking changes without deprecation period
 - Removing public APIs

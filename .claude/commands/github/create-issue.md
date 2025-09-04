@@ -1,3 +1,7 @@
+---
+model: claude-haiku-3-5-20241022
+---
+
 # Create GitHub Issue
 
 Create a new GitHub issue based on the user's description: $ARGUMENTS
@@ -51,9 +55,9 @@ Create a new GitHub issue based on the user's description: $ARGUMENTS
 
 5. **Report the Issue Number:**
     - Show the created issue number and URL
-    - Suggest next steps (create branch, sub-issues, etc.)
 
 Remember to:
+
 - Use clear, actionable language
 - Include all context from the discussion
 - Add appropriate labels

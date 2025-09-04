@@ -1,5 +1,5 @@
 {
-  "defaultMode": "plan",
+  "model": "claude-3-5-haiku-20241022",
   "permissions": {
     "allow": [
       "Read",
@@ -27,28 +27,28 @@
       "Bash(git branch *)",
       "Bash(git checkout *)",
       "Bash(git fetch *)",
-      "Bash(git pull origin develop)",
+      "Bash(git pull *)",
       "Bash(git add *)",
       "Bash(git commit *)",
       "Bash(git push origin feature/*)",
       "Bash(git push origin bugfix/*)",
       "Bash(git push origin docs/*)",
-      "Bash(./gradlew test *)",
-      "Bash(./gradlew build)",
-      "Bash(./gradlew spotlessCheck)",
-      "Bash(./gradlew spotlessApply)",
-      "Bash(./gradlew :*:test)",
-      "Bash(./gradlew :docs:antora)",
+      "Bash(git stash *)",
+      "Bash(git rebase *)",
+      "Bash(./gradlew *)",
       "Bash(gh issue *)",
       "Bash(gh pr *)",
       "Bash(java -version)",
       "Bash(gradle -version)",
+      "Bash(echo *)",
+      "Bash(cat *)",
+      "Bash(find * -name)",
+      "Bash(grep -r *)",
       "WebFetch",
       "WebSearch"
     ],
     "deny": [
-      "Read(.env)",
-      "Read(.env.*)",
+      "Read(.env*)",
       "Read(secrets/**)",
       "Read(**/*.key)",
       "Read(**/*.pem)",
@@ -66,7 +66,6 @@
       "Bash(git push origin main)",
       "Bash(git push origin develop)",
       "Bash(git merge main)",
-      "Bash(git merge develop)",
       "Bash(git rebase main)",
       "Bash(curl *)",
       "Bash(wget *)"
@@ -80,15 +79,6 @@
           {
             "type": "command",
             "command": "branch=$(git branch --show-current); if [[ \"$branch\" == \"main\" ]]; then echo '{\"continue\": false, \"stopReason\": \"Cannot push to protected branch: '$branch'. Please use a feature branch.\"}'; exit 1; fi"
-          }
-        ]
-      },
-      {
-        "matcher": "Write(*.java)|Edit(*.java)|MultiEdit(*.java)",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "echo 'Java file will be modified. Remember to add tests and Javadoc!'"
           }
         ]
       }
@@ -124,19 +114,6 @@
           }
         ]
       }
-    ],
-    "Notification": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "echo 'Sakura Boot: Claude needs your attention' >&2",
-            "timeout": 2
-          }
-        ]
-      }
     ]
-  },
-  "customInstructions": "You are working on the Sakura Boot framework. Always follow the framework conventions, create comprehensive tests (unit, integration, functional), and update documentation. Never modify protected branches directly."
+  }
 }

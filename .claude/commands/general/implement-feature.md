@@ -1,3 +1,7 @@
+---
+model: claude-sonnet-4-20241022
+---
+
 # Implement Feature for Sakura Boot
 
 Based on issue #$ARGUMENTS:
@@ -10,11 +14,11 @@ Based on issue #$ARGUMENTS:
 6. Plan implementation following framework conventions
 7. Implement with:
     - Comprehensive Javadoc (with examples)
-    - Unit tests in src/test
-    - Integration and functional tests in module-test
+    - Unit tests in src/test and sakura-boot-test
+    - Integration and functional tests in sakura-boot-test
     - Update example projects
 8. Update Antora documentation
-9. Run tests: `./gradlew test`
+9. Run tests: `./gradlew allTest`
 10. Format code: `./gradlew spotlessApply`
 
 CRITICAL: Maintain backward compatibility!

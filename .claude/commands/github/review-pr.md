@@ -1,3 +1,7 @@
+---
+model: claude-sonnet-4-20241022
+---
+
 # Review Pull Request (Read-Only)
 
 Review PR #$ARGUMENTS without making changes:
@@ -12,7 +16,7 @@ Review PR #$ARGUMENTS without making changes:
     - Antora documentation updates
     - Backward compatibility
     - Proper use of framework abstractions
-4. Run tests locally: `./gradlew test`
+4. Run tests locally: `./gradlew allTest`
 5. Check documentation build: `./gradlew :docs:antora`
 6. Prepare review comments
 7. DO NOT modify any files

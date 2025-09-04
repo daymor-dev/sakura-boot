@@ -1,3 +1,7 @@
+---
+model: claude-sonnet-4-20241022
+---
+
 # Check Framework Compliance
 
 Verify that current changes follow Sakura Boot framework standards:
@@ -15,9 +19,9 @@ Verify that current changes follow Sakura Boot framework standards:
     - @author tags present
 
 3. **Testing Coverage:**
-    - Unit tests in src/test/java
-    - Integration tests in [module]-test
-    - Functional tests for API changes
+    - Unit tests in src/test/java and in [module]-test
+    - Integration tests in sakura-boot-test/sakura-boot-integration-test
+    - Functional tests in sakura-boot-test/sakura-boot-functional-test
     - Test naming conventions followed
 
 4. **Framework Patterns:**

@@ -1,3 +1,7 @@
+---
+model: claude-sonnet-4-20241022
+---
+
 # Create Sub-Issues for Parent Issue
 
 Break down issue #$ARGUMENTS into manageable sub-tasks:

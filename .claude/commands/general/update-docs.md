@@ -1,3 +1,7 @@
+---
+model: claude-sonnet-4-20241022
+---
+
 # Update Antora Documentation
 
 Update documentation for: $ARGUMENTS
@@ -15,6 +19,7 @@ Update documentation for: $ARGUMENTS
 6. Verify generated documentation in `build/site/`
 
 Remember to:
+
 - Include code snippets from actual implementation
 - Add diagrams if needed
 - Update version references

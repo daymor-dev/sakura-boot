@@ -1,3 +1,7 @@
+---
+model: claude-opus-4-1-20250805
+---
+
 # Create New Sakura Boot Module
 
 Create a new module named $ARGUMENTS following Sakura Boot conventions:
@@ -14,6 +18,7 @@ Create a new module named $ARGUMENTS following Sakura Boot conventions:
 10. Write unit, integration, and functional tests
 
 Remember:
+
 - Follow existing module patterns exactly
 - Include comprehensive Javadoc with examples
 - Create all three test types
