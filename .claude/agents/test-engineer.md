@@ -1,7 +1,7 @@
 ---
 name: Test Engineer
 description: Test creation and validation specialist
-model: claude-sonnet-4-20241022
+model: claude-sonnet-4-20250514
 tools:
   - Read
   - Write(*Test.java)

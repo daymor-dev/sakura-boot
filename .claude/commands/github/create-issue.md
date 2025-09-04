@@ -1,5 +1,5 @@
 ---
-model: claude-haiku-3-5-20241022
+model: claude-3-5-haiku-latest
 ---
 
 # Create GitHub Issue
