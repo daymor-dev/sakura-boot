@@ -7,8 +7,8 @@ model: claude-sonnet-4-20241022
 Based on issue #$ARGUMENTS:
 
 1. Review issue: `gh issue view $ARGUMENTS`
-2. Check current branch: `git branch --show-current`
-3. Create feature branch: `git checkout -b feature/issue-$ARGUMENTS-description`
+2. Fetch, checkout to main and pull last change: `git fetch origin` `git checkout main` `git pull origin main`
+3. Create feature branch: `git checkout -b CLAUDE/issue-$ARGUMENTS-description`
 4. Analyze which modules are affected
 5. Review existing implementations for patterns
 6. Plan implementation following framework conventions

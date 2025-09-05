@@ -7,7 +7,7 @@ model: claude-sonnet-4-20241022
 Review PR #$ARGUMENTS without making changes:
 
 1. Fetch PR: `gh pr checkout $ARGUMENTS`
-2. Review changes: `git diff develop...HEAD`
+2. Review changes: `git diff origin/<target-branch>...`
 3. Check for:
     - Adherence to Sakura Boot patterns
     - Javadoc completeness with examples

@@ -22,7 +22,7 @@ Break down issue #$ARGUMENTS into manageable sub-tasks:
 
    a) **Implementation Sub-Issue:**
    ```markdown
-   Title: [Sub-Task] Implement [sub-task description] for #$ARGUMENTS
+   Title: CLAUDE - [Sub-Task] Implement [sub-task description] for #$ARGUMENTS
    Body:
    Parent Issue: #$ARGUMENTS
    
@@ -39,7 +39,7 @@ Break down issue #$ARGUMENTS into manageable sub-tasks:
 
    b) **Documentation Sub-Issue:**
    ```markdown
-   Title: [Sub-Task] Update documentation for #$ARGUMENTS
+   Title: CLAUDE - [Sub-Task] Update documentation for #$ARGUMENTS
    Body:
    Parent Issue: #$ARGUMENTS
    
@@ -57,23 +57,23 @@ Break down issue #$ARGUMENTS into manageable sub-tasks:
    ```bash
    # Create each sub-issue and link to parent
    gh issue create \
-     --title "[Sub-Task] Implementation for #$ARGUMENTS" \
+     --title "CLAUDE - [Sub-Task] Implementation for #$ARGUMENTS" \
      --body "..." \
      --label "sub-task" \
      --assignee "@me"
    
    # Link sub-issues to parent (using issue numbers returned)
    gh issue comment $ARGUMENTS --body "Created sub-tasks:
-   - #[sub-issue-1]: Implementation
-   - #[sub-issue-2]: Documentation"
+   - #CLAUDE - [sub-issue-1]: Implementation
+   - #CLAUDE - [sub-issue-2]: Documentation"
    ```
 
 5. **Create Tracking Comment:**
    Add a checklist to the parent issue:
    ```markdown
    ## Sub-Tasks
-   - [ ] #[num] Implementation
-   - [ ] #[num] Documentation
+   - [ ] #CLAUDE - [num] Implementation
+   - [ ] #CLAUDE - [num] Documentation
    ```
 
 Output the created sub-issue numbers and suggest starting with implementation task.

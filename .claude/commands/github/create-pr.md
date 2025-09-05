@@ -1,10 +1,10 @@
 ---
-model: claude-haiku-3-5-20241022
+model: claude-sonnet-4-20241022
 ---
 
 # Create Pull Request for Sakura Boot
 
-Follow these steps to create a PR:
+Follow these steps to create a PR of the current branch:
 
 1. Ensure all tests pass: `./gradlew clean test`
 2. Check code formatting: `./gradlew spotlessCheck`
@@ -17,7 +17,7 @@ Follow these steps to create a PR:
     - refactor: code restructuring
     - test: adding tests
 5. Push branch: `git push -u origin HEAD`
-6. Create PR using: `gh pr create --base develop --title "[Issue #] Feature description" --body "..."`
+6. Create PR using: `gh pr create --base develop --title "CLAUDE - [Issue #] Feature description" --body "..."`
 7. Include in PR description:
     - Fixes #[issue number]
     - Description of changes

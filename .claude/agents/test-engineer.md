@@ -7,7 +7,7 @@ tools:
   - Write(*Test.java)
   - Write(*IntegrationTest.java)
   - Write(*FunctionalTest.java)
-  - Bash(./gradlew test:*)
+  - Bash(./gradlew allTest:*)
   - Bash(./gradlew jacocoTestReport:*)
 ---
 

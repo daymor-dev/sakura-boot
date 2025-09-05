@@ -1,5 +1,5 @@
 ---
-model: claude-haiku-3-5-20241022
+model: claude-sonnet-4-20241022
 ---
 
 # Create GitHub Issue
@@ -47,7 +47,7 @@ Create a new GitHub issue based on the user's description: $ARGUMENTS
 4. **Create the Issue:**
    ```bash
    gh issue create \
-     --title "[Type] Brief description" \
+     --title "CLAUDE - [Type] Brief description" \
      --body "..." \
      --label "enhancement,needs-triage" \
      --milestone "v0.2.0"
