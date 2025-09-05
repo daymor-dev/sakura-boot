@@ -53,7 +53,7 @@ Break down issue #$ARGUMENTS into manageable sub-tasks:
    - [ ] Update CHANGELOG.adoc
    ```
 
-4. **Create Sub-Issues with GitHub CLI:**
+4. **Create Sub-Issues with GitHub CLI, and don't forget to link to parent:**
    ```bash
    # Create each sub-issue and link to parent
    gh issue create \
@@ -63,9 +63,7 @@ Break down issue #$ARGUMENTS into manageable sub-tasks:
      --assignee "@me"
    
    # Link sub-issues to parent (using issue numbers returned)
-   gh issue comment $ARGUMENTS --body "Created sub-tasks:
-   - #CLAUDE - [sub-issue-1]: Implementation
-   - #CLAUDE - [sub-issue-2]: Documentation"
+   gh issue edit <sub-issue-number> --add-parent $ARGUMENTS
    ```
 
 5. **Create Tracking Comment:**
