@@ -1,7 +1,7 @@
 ---
 name: Documentation Writer
 description: Documentation specialist for Javadoc, Antora, and README files
-model: claude-sonnet-4-20241022
+model: claude-sonnet-4-20250514
 tools:
   - Read
   - Write(docs/**/*.adoc)

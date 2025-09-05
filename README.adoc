@@ -5,6 +5,8 @@ image:https://img.shields.io/github/v/release/daymor-dev/sakura-boot[GitHub Rele
 image:https://img.shields.io/github/deployments/daymor-dev/sakura-boot/github-pages[GitHub deployments]
 image:https://img.shields.io/github/license/daymor-dev/sakura-boot[GitHub License]
 
+image:https://github.com/codespaces/badge.svg[link="https://codespaces.new/daymor-dev/sakura-boot?quickstart=1", alt="Open in GitHub Codespaces"]
+
 [.text-center]
 image::SakuraBootLogo.png[alt="Sakura Boot logo"]
 
