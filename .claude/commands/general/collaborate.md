@@ -4,7 +4,8 @@ model: claude-sonnet-4-20250514
 
 # Collaborate on Sakura Boot
 
-You will collaborate on the Sakura boot framework:
+You will collaborate on the Sakura boot framework
+For any action that you do on GitHub be sure to identify yourself has CLAUDE
 
 ## If sub-issue exists:
 

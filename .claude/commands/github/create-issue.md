@@ -12,7 +12,7 @@ Create a new GitHub issue based on the user's description: $ARGUMENTS
     - Determine the type: feature, bug, enhancement, documentation
 
 2. **Structure the Issue:**
-    - Create a clear, actionable title
+    - Create a clear, actionable title with CLAUDE in the name
     - Write detailed description
     - Add acceptance criteria
     - Include technical details

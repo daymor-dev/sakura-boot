@@ -17,7 +17,8 @@ Follow these steps to create a PR of the current branch:
     - refactor: code restructuring
     - test: adding tests
 5. Push branch: `git push -u origin HEAD`
-6. Create PR using: `gh pr create --base develop --title "CLAUDE - [Issue #] Feature description" --body "..."`
+6. Create PR with CLAUDE in the name using:
+   `gh pr create --base develop --title "CLAUDE - [Issue #] Feature description" --body "..."`
 7. Include in PR description:
     - Fixes #[issue number]
     - Description of changes

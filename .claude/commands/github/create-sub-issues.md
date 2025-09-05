@@ -53,7 +53,7 @@ Break down issue #$ARGUMENTS into manageable sub-tasks:
    - [ ] Update CHANGELOG.adoc
    ```
 
-4. **Create Sub-Issues with GitHub CLI, and don't forget to link to parent:**
+4. **Create Sub-Issues with GitHub CLI, and don't forget to link to parent, must contain CLAUDE in the name:**
    ```bash
    # Create each sub-issue and link to parent
    gh issue create \
