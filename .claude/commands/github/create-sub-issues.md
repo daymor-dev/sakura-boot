@@ -53,25 +53,20 @@ Break down issue #$ARGUMENTS into manageable sub-tasks:
    - [ ] Update CHANGELOG.adoc
    ```
 
-4. **Create Sub-Issues with GitHub CLI, and don't forget to link to parent, must contain CLAUDE in the name:**
+4. **Create Sub-Issues with GitHub CLI must contain CLAUDE in the name:**
    ```bash
-   # Create each sub-issue and link to parent
+   # Create each sub-issue
    gh issue create \
      --title "CLAUDE - [Sub-Task] Implementation for #$ARGUMENTS" \
      --body "..." \
-     --label "sub-task" \
-     --assignee "@me"
-   
-   # Link sub-issues to parent (using issue numbers returned)
-   gh issue edit <sub-issue-number> --add-parent $ARGUMENTS
+     --label "..."
    ```
 
-5. **Create Tracking Comment:**
-   Add a checklist to the parent issue:
-   ```markdown
-   ## Sub-Tasks
-   - [ ] #CLAUDE - [num] Implementation
-   - [ ] #CLAUDE - [num] Documentation
+5. **Link to parent using the new GitHub CLI command:**
+
+    ```bash
+    # Link sub-issues to parent (using issue numbers returned)
+   gh issue edit <sub-issue-number> --add-parent $ARGUMENTS
    ```
 
 Output the created sub-issue numbers and suggest starting with implementation task.

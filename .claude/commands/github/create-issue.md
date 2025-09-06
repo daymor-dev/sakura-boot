@@ -49,8 +49,7 @@ Create a new GitHub issue based on the user's description: $ARGUMENTS
    gh issue create \
      --title "CLAUDE - [Type] Brief description" \
      --body "..." \
-     --label "enhancement,needs-triage" \
-     --milestone "v0.2.0"
+     --label "..."
    ```
 
 5. **Report the Issue Number:**
