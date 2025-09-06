@@ -7,6 +7,12 @@ model: claude-sonnet-4-20250514
 You will collaborate on the Sakura boot framework
 For any action that you do on GitHub be sure to identify yourself has CLAUDE
 
+### When talking about sub-issue:
+
+1. It's refer to an issue that is link to a parent issue
+2. The child and parent issue are link with GitHub sub-issue, not via comment
+3. Sub-issue are not sub-task in an issue but separate issue
+
 ## If sub-issue exists:
 
 1. Select one sub-issue, that has no conversation first if possible
