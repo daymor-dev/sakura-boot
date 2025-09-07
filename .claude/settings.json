@@ -38,6 +38,7 @@
       "Bash(./gradlew :*)",
       "Bash(gh issue :*)",
       "Bash(gh pr :*)",
+      "Bash(gh api:*)",
       "Bash(java -version)",
       "Bash(gradle -version)",
       "Bash(echo :*)",

@@ -1,17 +1,25 @@
 ---
-model: claude-sonnet-4-20250514
+model: claude-opus-4-1-20250805
 ---
 
 # Collaborate on Sakura Boot
 
 You will collaborate on the Sakura boot framework
 For any action that you do on GitHub be sure to identify yourself has CLAUDE
+(in the title of the issue, PR and at the end of a comment)
 
 ### When talking about sub-issue:
 
 1. It's refer to an issue that is link to a parent issue
 2. The child and parent issue are link with GitHub sub-issue, not via comment
 3. Sub-issue are not sub-task in an issue but separate issue
+
+### When working with sub-issue:
+
+1. The parent must have a branch
+2. For each sub-issue one branch must be created from the parent branch
+3. When creating a PR, the target branch must be the parent branch
+4. Never code in the parent branch, only in the sub-issue branch
 
 ## If sub-issue exists:
 
