@@ -22,13 +22,16 @@ import dev.daymor.sakuraboot.DataPresentation;
 
 /**
  * The interface for bulk functional tests with filering.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete test class that inherits from {@link CriteriaBulkFT},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link CriteriaBulkFT} class:
  * </p>

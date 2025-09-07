@@ -25,13 +25,16 @@ import dev.daymor.sakuraboot.file.api.business.services.UploadFileService;
 
 /**
  * The service interface for download, upload and delete file operation.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a service interface that inherits from {@link FileService},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Create a new service interface:
  * </p>
@@ -43,10 +46,12 @@ import dev.daymor.sakuraboot.file.api.business.services.UploadFileService;
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * To create a service class that implements {@link FileService}, follow
  * these steps:
  * </p>
+ *
  * <p>
  * Create a new service class:
  * </p>

@@ -31,13 +31,16 @@ import dev.daymor.sakuraboot.specification.api.presentation.FilterPresentation;
 
 /**
  * The service interface for deleteAll operation with filtering.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a service interface that inherits from
  * {@link DeleteAllByCriteriaService}, follow these steps:
  * </p>
+ *
  * <p>
  * Create a new service interface:
  * </p>
@@ -49,10 +52,12 @@ import dev.daymor.sakuraboot.specification.api.presentation.FilterPresentation;
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * To create a service class that implements {@link DeleteAllByCriteriaService},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Create a new service class:
  * </p>

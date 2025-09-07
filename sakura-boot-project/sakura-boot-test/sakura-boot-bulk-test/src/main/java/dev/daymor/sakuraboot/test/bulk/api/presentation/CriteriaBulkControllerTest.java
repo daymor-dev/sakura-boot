@@ -33,13 +33,16 @@ import dev.daymor.sakuraboot.test.bulk.api.presentation.controllers.UpdateAllCon
 /**
  * The base test interface for all criteria bulk controllers. This interface
  * provides common tests for testing {@link CriteriaBulkController}.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete controller test class that inherits from
  * {@link CriteriaBulkControllerTest}, follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link CriteriaBulkControllerTest} class:
  * </p>

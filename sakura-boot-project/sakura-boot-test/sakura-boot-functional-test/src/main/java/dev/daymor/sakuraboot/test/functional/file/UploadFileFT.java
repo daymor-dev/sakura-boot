@@ -34,13 +34,16 @@ import dev.daymor.sakuraboot.test.functional.SuperFT;
 
 /**
  * The interface for upload file functional tests.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete test class that inherits from {@link UploadFileFT},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link UploadFileFT} class:
  * </p>

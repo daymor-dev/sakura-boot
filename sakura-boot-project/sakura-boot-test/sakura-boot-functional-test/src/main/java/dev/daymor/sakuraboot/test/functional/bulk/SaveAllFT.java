@@ -40,13 +40,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * The interface for saveAll functional tests.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete test class that inherits from {@link SaveAllFT},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link SaveAllFT} class:
  * </p>

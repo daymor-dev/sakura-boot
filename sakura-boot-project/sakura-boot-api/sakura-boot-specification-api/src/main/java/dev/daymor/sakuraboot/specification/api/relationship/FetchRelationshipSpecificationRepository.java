@@ -29,9 +29,11 @@ import dev.daymor.sakuraboot.specification.api.persistence.CriteriaRepository;
 /**
  * The base interface for all Spring Data repositories with relationship and
  * filtering.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a repository for your {@link DataPresentation} that inherits from
  * {@link FetchRelationshipSpecificationRepository}, follow these steps:

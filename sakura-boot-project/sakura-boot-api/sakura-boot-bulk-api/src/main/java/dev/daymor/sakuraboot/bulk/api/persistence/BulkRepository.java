@@ -24,9 +24,11 @@ import dev.daymor.sakuraboot.DataPresentation;
 /**
  * The base interface for all Spring Data repositories with bulk operations.
  * The persistence context will be cleared after the flush by default.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a repository for your {@link DataPresentation} that inherits from
  * {@link BulkRepository}, follow these steps:
@@ -72,6 +74,7 @@ public interface BulkRepository<E extends DataPresentation<I>,
      * But it will remove the ability to retrieve the proxy entities in
      * future operations.
      * {@code true} by default.
+ *
      * <p>
      * <b>NOTE:</b> The return value should be turned to {@code false} if the
      * application is using mapper with relationship objects to map to the dto.

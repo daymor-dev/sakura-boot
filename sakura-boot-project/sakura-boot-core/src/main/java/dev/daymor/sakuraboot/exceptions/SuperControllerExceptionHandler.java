@@ -56,6 +56,7 @@ import dev.daymor.sakuraboot.exceptions.configuration.ExceptionConfiguration;
  * Global exception handler for the REST controller. Extends
  * {@link ResponseEntityExceptionHandler} to provide custom handling of various
  * exceptions and return appropriate error responses.
+ *
  * <p>
  * <b>NOTE:</b> This class already has all the needed methods to handle various
  * exceptions. If you need to add other methods or modify existing one you can

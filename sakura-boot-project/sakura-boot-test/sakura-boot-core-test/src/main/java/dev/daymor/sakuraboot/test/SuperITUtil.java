@@ -27,13 +27,16 @@ import dev.daymor.sakuraboot.DataPresentation;
 /**
  * The interface for all the utility integration test function. This interface
  * provides common functions for integration testing basic class.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete util class that inherits from {@link SuperITUtil},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link SuperITUtil} interface:
  * </p>

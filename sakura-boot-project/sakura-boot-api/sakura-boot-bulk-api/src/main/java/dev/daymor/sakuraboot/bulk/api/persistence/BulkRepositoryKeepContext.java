@@ -23,9 +23,11 @@ import dev.daymor.sakuraboot.DataPresentation;
 /**
  * The base interface for all Spring Data repositories with bulk operations.
  * The persistence context will not be cleared after the flush by default.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a repository for your {@link DataPresentation} that inherits from
  * {@link BulkRepositoryKeepContext}, follow these steps:

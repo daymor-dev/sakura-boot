@@ -20,13 +20,16 @@ import java.io.Serializable;
 
 /**
  * The base controller interface.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a controller interface that inherits from {@link SuperController},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Create a new controller interface:
  * </p>
@@ -40,10 +43,12 @@ import java.io.Serializable;
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * To create a controller class that implements {@link SuperController}, follow
  * these steps:
  * </p>
+ *
  * <p>
  * Create a new controller class:
  * </p>

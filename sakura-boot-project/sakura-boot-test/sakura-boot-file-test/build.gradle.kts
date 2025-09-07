@@ -5,7 +5,7 @@ plugins {
 
 description =
     "Framework to simplify the creation of a spring boot application. " +
-            "The file test functionalities."
+        "The file test functionalities."
 
 publishing.publications.getByName<MavenPublication>("mavenJava") {
     pom.description = description
@@ -14,9 +14,9 @@ publishing.publications.getByName<MavenPublication>("mavenJava") {
 dependencies {
     api(projects.sakuraBootBasic)
     api(projects.sakuraBootBasicApi)
-    api(projects.sakuraBootFileApi)
     api(projects.sakuraBootCore)
     api(projects.sakuraBootCoreTest)
+    api(projects.sakuraBootFileApi)
     api(libs.jackson.databind)
     api(libs.junit.jupiter.api)
     implementation(libs.assertj.core)

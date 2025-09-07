@@ -42,13 +42,16 @@ import static org.mockito.Mockito.verify;
 
 /**
  * The interface for delete all by criteria controller integration tests.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete controller test class that inherits from
  * {@link DeleteAllByCriteriaControllerIT}, follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link DeleteAllByCriteriaControllerIT} class:
  * </p>

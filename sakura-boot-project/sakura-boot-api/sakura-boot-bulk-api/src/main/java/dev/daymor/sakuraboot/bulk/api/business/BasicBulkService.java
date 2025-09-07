@@ -27,13 +27,16 @@ import dev.daymor.sakuraboot.bulk.api.business.services.UpdateAllService;
 
 /**
  * The base service interface for bulk operations.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a service interface that inherits from {@link BasicBulkService},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Create a new service interface:
  * </p>
@@ -45,10 +48,12 @@ import dev.daymor.sakuraboot.bulk.api.business.services.UpdateAllService;
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * To create a service class that implements {@link BasicBulkService}, follow
  * these steps:
  * </p>
+ *
  * <p>
  * Create a new service class:
  * </p>

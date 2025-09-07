@@ -38,13 +38,16 @@ import dev.daymor.sakuraboot.util.ToStringUtils;
  * HATEOAS support.
  * This class extends {@link RepresentationModel} and provides common fields and
  * methods for model classes.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a model that inherits from {@link AbstractBasicModel}, follow these
  * steps:
  * </p>
+ *
  * <p>
  * Create a new model class:
  * </p>

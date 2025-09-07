@@ -49,13 +49,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * The abstract test class for the {@link AbstractBasicModelAssembler}.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete test class that inherits from
  * {@link BasicModelAssemblerTest}, follow these steps:
  * </p>
+ *
  * <p>
  * Extends the {@link BasicModelAssemblerTest} class:
  * </p>

@@ -23,9 +23,11 @@ import org.springframework.data.repository.NoRepositoryBean;
 
 /**
  * The base repository interface.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a repository for your {@link DataPresentation} that inherits from
  * {@link SuperRepository}, follow these steps:

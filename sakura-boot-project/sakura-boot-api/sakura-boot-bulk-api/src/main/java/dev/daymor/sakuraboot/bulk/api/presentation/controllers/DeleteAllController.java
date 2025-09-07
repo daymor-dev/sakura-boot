@@ -31,13 +31,16 @@ import dev.daymor.sakuraboot.openapi.api.annotations.SwaggerNoContentApiResponse
 
 /**
  * The controller interface for deleteAll operation.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a controller interface that inherits from
  * {@link DeleteAllController}, follow these steps:
  * </p>
+ *
  * <p>
  * Create a new controller interface:
  * </p>
@@ -51,10 +54,12 @@ import dev.daymor.sakuraboot.openapi.api.annotations.SwaggerNoContentApiResponse
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * To create a controller class that implements {@link DeleteAllController},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Create a new controller class:
  * </p>

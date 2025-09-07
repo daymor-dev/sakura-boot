@@ -25,13 +25,16 @@ import org.springframework.http.HttpStatusCode;
 /**
  * Represents a super exception class. Superclass for custom exceptions,
  * providing common error status handling.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a custom exception that inherits from {@link SuperException},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Create a new exception class:
  * </p>

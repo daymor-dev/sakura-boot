@@ -18,9 +18,11 @@ package dev.daymor.sakuraboot.log.api;
 
 /**
  * Interface for all class that add log support needs to implement.
+ *
  * <p>
  * To create a class that implements {@link Loggable}, follow these steps:
  * </p>
+ *
  * <p>
  * Create a new class:
  * </p>

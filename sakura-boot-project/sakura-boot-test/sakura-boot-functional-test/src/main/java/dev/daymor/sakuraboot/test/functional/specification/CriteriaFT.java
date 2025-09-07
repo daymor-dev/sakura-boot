@@ -28,14 +28,17 @@ import dev.daymor.sakuraboot.test.functional.basic.UpdateByIdFT;
 
 /**
  * The interface for criteria functional tests.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete test class that inherits from {@link CriteriaFT},
  * follow
  * these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link CriteriaFT} class:
  * </p>

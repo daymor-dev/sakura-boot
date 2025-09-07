@@ -38,13 +38,16 @@ import static org.mockito.Mockito.verify;
 
 /**
  * The interface for DeleteFile controller integration tests.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete controller test class that inherits from
  * {@link DeleteFileControllerIT}, follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link DeleteFileControllerIT} class:
  * </p>

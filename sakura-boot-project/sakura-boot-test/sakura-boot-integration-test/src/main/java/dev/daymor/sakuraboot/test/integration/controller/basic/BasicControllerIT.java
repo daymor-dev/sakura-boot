@@ -33,13 +33,16 @@ import dev.daymor.sakuraboot.test.integration.controller.basic.controllers.Updat
 /**
  * The base integration test interface for all basic controllers. This interface
  * provides common integration tests for testing {@link BasicController}.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete controller integration test class that inherits from
  * {@link BasicControllerIT}, follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link BasicControllerIT} class:
  * </p>

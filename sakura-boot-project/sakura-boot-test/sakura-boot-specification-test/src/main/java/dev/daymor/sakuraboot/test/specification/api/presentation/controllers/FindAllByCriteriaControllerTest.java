@@ -44,13 +44,16 @@ import static org.mockito.Mockito.mock;
 /**
  * The base test interface for all find all controllers. This interface provides
  * common tests for testing {@link FindAllByCriteriaController}.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete controller test class that inherits from
  * {@link FindAllByCriteriaControllerTest}, follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link FindAllByCriteriaControllerTest} class:
  * </p>

@@ -38,14 +38,17 @@ import dev.daymor.sakuraboot.util.RelationshipUtils;
 /**
  * This class can be used to convert a {@link DataPresentation} to
  * an {@link AbstractBasicModel}.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a model assembler that inherits from
  * {@link AbstractBasicModelAssembler}, follow these
  * steps:
  * </p>
+ *
  * <p>
  * Create a new model assembler class:
  * </p>
@@ -65,6 +68,7 @@ import dev.daymor.sakuraboot.util.RelationshipUtils;
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * <b>NOTE:</b> If you want to add some link to the model you can do it in the
  * {@link #instantiateModel()} after instantiate the model and before returning

@@ -24,13 +24,16 @@ import dev.daymor.sakuraboot.specification.api.business.SuperCriteriaService;
 
 /**
  * The base controller interface with filtering..
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a controller interface that inherits from
  * {@link SuperCriteriaController}, follow these steps:
  * </p>
+ *
  * <p>
  * Create a new controller interface:
  * </p>
@@ -45,11 +48,13 @@ import dev.daymor.sakuraboot.specification.api.business.SuperCriteriaService;
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * To create a controller class that implements {@link SuperCriteriaController},
  * follow
  * these steps:
  * </p>
+ *
  * <p>
  * Create a new controller class:
  * </p>

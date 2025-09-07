@@ -36,6 +36,7 @@ import dev.daymor.sakuraboot.exceptions.ErrorResponse;
  * when there is an issue with the request, and HTTP status code 500 (Internal
  * Server Error) when an unexpected error occurs during the processing of the
  * request.
+ *
  * <p>
  * <b>Example:</b>
  * </p>

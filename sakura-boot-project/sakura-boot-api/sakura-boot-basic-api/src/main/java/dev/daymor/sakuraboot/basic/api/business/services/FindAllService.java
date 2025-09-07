@@ -31,13 +31,16 @@ import dev.daymor.sakuraboot.mapper.api.annotations.Mapping;
 
 /**
  * The service interface for findAll operation.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a service interface that inherits from {@link FindAllService},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Create a new service interface:
  * </p>
@@ -49,10 +52,12 @@ import dev.daymor.sakuraboot.mapper.api.annotations.Mapping;
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * To create a service class that implements {@link FindAllService}, follow
  * these steps:
  * </p>
+ *
  * <p>
  * Create a new service class:
  * </p>

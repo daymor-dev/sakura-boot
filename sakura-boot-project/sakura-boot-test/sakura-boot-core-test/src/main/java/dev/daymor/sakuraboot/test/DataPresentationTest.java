@@ -35,13 +35,16 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 /**
  * The base test interface for all dataPresentation. This interface provides
  * common tests for testing {@link DataPresentation}.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete dataPresentation test class that inherits from
  * {@link DataPresentationTest}, follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link DataPresentationTest} class:
  * </p>

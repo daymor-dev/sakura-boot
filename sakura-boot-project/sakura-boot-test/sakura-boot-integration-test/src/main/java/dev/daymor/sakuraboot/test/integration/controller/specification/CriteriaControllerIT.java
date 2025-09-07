@@ -36,13 +36,16 @@ import dev.daymor.sakuraboot.test.integration.controller.specification.controlle
  * The base integration test interface for all criteria controllers. This
  * interface provides common integration tests for testing
  * {@link CriteriaController}.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete controller integration test class that inherits from
  * {@link CriteriaControllerIT}, follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link CriteriaControllerIT} class:
  * </p>

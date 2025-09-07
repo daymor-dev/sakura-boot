@@ -25,13 +25,16 @@ import dev.daymor.sakuraboot.util.ReflectionUtils;
 /**
  * The interface for all the utility test function. This interface provides
  * common functions for testing basic class.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete util class that inherits from {@link BasicTestUtil},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link BasicTestUtil} interface:
  * </p>

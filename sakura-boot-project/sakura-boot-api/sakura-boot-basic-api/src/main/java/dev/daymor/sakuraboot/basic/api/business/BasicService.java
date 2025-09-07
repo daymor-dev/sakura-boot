@@ -28,13 +28,16 @@ import dev.daymor.sakuraboot.basic.api.business.services.UpdateByIdService;
 
 /**
  * The base service interface for CRUD operations.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a service interface that inherits from {@link BasicService}, follow
  * these steps:
  * </p>
+ *
  * <p>
  * Create a new service interface:
  * </p>
@@ -46,10 +49,12 @@ import dev.daymor.sakuraboot.basic.api.business.services.UpdateByIdService;
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * To create a service class that implements {@link BasicService}, follow these
  * steps:
  * </p>
+ *
  * <p>
  * Create a new service class:
  * </p>

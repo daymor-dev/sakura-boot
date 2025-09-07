@@ -30,9 +30,11 @@ import dev.daymor.sakuraboot.SuperRepository;
 
 /**
  * The base interface for all Spring Data repositories.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a repository for your {@link DataPresentation} that inherits from
  * {@link BasicRepository}, follow these steps:

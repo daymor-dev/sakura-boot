@@ -41,13 +41,16 @@ import dev.daymor.sakuraboot.util.ToStringUtils;
  * unidirectional relationship is enough.
  * Also, OneToMany relation is not recommended, and it can be made by a
  * ManyToOne unidirectional relation if used with the specification module.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create and use a concrete entity class that inherits from
  * {@link AbstractBasicEntity}, follow these steps:
  * </p>
+ *
  * <p>
  * Extend the {@link AbstractBasicEntity} class:
  * </p>

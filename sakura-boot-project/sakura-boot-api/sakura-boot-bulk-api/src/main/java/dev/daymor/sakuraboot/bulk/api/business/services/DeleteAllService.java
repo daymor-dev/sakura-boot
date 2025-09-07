@@ -28,13 +28,16 @@ import dev.daymor.sakuraboot.log.api.annotations.Logging;
 
 /**
  * The service interface for deleteAll operation.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a service interface that inherits from {@link DeleteAllService},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Create a new service interface:
  * </p>
@@ -46,10 +49,12 @@ import dev.daymor.sakuraboot.log.api.annotations.Logging;
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * To create a service class that implements {@link DeleteAllService}, follow
  * these steps:
  * </p>
+ *
  * <p>
  * Create a new service class:
  * </p>

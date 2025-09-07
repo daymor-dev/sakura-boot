@@ -42,13 +42,16 @@ import static org.mockito.BDDMockito.given;
 /**
  * The base test interface for all find all controllers. This interface provides
  * common tests for testing {@link FindAllController}.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete controller test class that inherits from
  * {@link FindAllControllerTest}, follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link FindAllControllerTest} class:
  * </p>

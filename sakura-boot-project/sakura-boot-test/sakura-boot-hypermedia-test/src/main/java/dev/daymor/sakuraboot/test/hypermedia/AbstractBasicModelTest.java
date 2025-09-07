@@ -31,13 +31,16 @@ import dev.daymor.sakuraboot.test.BeanTest;
 /**
  * The base test abstract class for all Model. This abstract class provides
  * common tests for testing {@link AbstractBasicModel}.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete model test class that inherits from
  * {@link AbstractBasicModelTest}, follow these steps:
  * </p>
+ *
  * <p>
  * Extends the {@link AbstractBasicModelTest} class:
  * </p>

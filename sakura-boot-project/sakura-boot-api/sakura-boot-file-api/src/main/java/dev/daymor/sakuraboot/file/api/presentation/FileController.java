@@ -26,13 +26,16 @@ import dev.daymor.sakuraboot.file.api.presentation.controllers.UploadFileControl
 
 /**
  * The controller interface for download, upload and delete file operation.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a controller interface that inherits from
  * {@link FileController}, follow these steps:
  * </p>
+ *
  * <p>
  * Create a new controller interface:
  * </p>
@@ -46,10 +49,12 @@ import dev.daymor.sakuraboot.file.api.presentation.controllers.UploadFileControl
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * To create a controller class that implements {@link FileController},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Create a new controller class:
  * </p>

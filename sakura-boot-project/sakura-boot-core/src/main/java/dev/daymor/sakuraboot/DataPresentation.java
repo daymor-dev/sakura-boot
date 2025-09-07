@@ -44,6 +44,7 @@ public interface DataPresentation<
      * interface can be used as a parameter in validation annotations to specify
      * that certain fields should be validated when performing full data
      * operations.
+ *
      * <p>
      * <b>Example:</b>
      * </p>
@@ -67,6 +68,7 @@ public interface DataPresentation<
      * This interface can be used as a parameter in validation annotations to
      * specify that certain fields should be validated when performing partial
      * data operations (e.g., PATCH).
+ *
      * <p>
      * <b>Example:</b>
      * </p>

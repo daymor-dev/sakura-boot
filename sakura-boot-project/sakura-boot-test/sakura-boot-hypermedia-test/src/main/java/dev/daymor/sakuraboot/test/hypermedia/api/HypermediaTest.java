@@ -37,13 +37,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * The base test interface for all Hypermedia classes. This interface provides
  * common tests for testing {@link Hypermedia}.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete test class that inherits from {@link HypermediaTest},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link HypermediaTest} class:
  * </p>

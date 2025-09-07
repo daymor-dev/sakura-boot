@@ -27,13 +27,16 @@ import dev.daymor.sakuraboot.test.functional.SuperFTUtil;
 /**
  * The interface for all the utility functional test function. This interface
  * provides common functions for testing mapper class.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete util class that inherits from {@link MapperFTUtil},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link MapperFTUtil} interface:
  * </p>

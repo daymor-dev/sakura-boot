@@ -25,9 +25,11 @@ import dev.daymor.sakuraboot.basic.api.persistence.BasicRepository;
 
 /**
  * The base interface for all Spring Data repositories with relationship.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a repository for your {@link DataPresentation} that inherits from
  * {@link FetchRelationshipRepository}, follow these steps:

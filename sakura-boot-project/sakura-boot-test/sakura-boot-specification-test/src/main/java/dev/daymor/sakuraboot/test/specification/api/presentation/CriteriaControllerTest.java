@@ -35,13 +35,16 @@ import dev.daymor.sakuraboot.test.specification.api.presentation.controllers.Fin
 /**
  * The base test interface for all criteria controllers. This interface provides
  * common tests for testing {@link CriteriaController}.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete controller test class that inherits from
  * {@link CriteriaControllerTest}, follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link CriteriaControllerTest} class:
  * </p>

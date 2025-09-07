@@ -24,13 +24,16 @@ import org.springframework.lang.Nullable;
 
 /**
  * A basic CachingHelper class providing common cache operations.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a cachingHelper that inherits from {@link CachingUtil}, follow
  * these steps:
  * </p>
+ *
  * <p>
  * Create a new cachingUtil class:
  * </p>

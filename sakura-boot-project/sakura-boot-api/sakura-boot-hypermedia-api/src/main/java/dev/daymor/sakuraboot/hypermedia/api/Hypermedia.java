@@ -27,10 +27,12 @@ import dev.daymor.sakuraboot.util.ReflectionUtils;
 /**
  * Interface for all controller class that add hypermedia support needs to
  * implement.
+ *
  * <p>
  * To create a controller that implements {@link Hypermedia}, follow these
  * steps:
  * </p>
+ *
  * <p>
  * Create a new controller:
  * </p>

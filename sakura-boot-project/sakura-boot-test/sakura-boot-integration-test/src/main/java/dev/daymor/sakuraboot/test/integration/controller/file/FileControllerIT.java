@@ -30,13 +30,16 @@ import dev.daymor.sakuraboot.test.integration.controller.file.controllers.Upload
 /**
  * The base integration test interface for all file controllers. This interface
  * provides common integration tests for testing {@link FileController}.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete controller integration test class that inherits from
  * {@link FileControllerIT}, follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link FileControllerIT} class:
  * </p>

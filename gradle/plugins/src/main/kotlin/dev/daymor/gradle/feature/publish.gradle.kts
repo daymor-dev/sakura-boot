@@ -47,8 +47,12 @@ publishing {
 
 signing {
     useInMemoryPgpKeys(
-        (findProperty("signingKey") ?: System.getenv("SIGNINGKEY") ?: "") as String,
-        (findProperty("signingPassword") ?: System.getenv("SIGNINGPASSWORD") ?: "") as String
+        (findProperty("signingKey") ?: System.getenv("SIGNINGKEY") ?: "")
+            as String,
+        (findProperty("signingPassword")
+            ?: System.getenv("SIGNINGPASSWORD")
+            ?: "")
+            as String
     )
     sign(publishing.publications["mavenJava"])
 }

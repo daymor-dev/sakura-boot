@@ -37,14 +37,17 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * The interface for update by id functional tests.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete test class that inherits from {@link UpdateByIdFT},
  * follow
  * these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link UpdateByIdFT} class:
  * </p>

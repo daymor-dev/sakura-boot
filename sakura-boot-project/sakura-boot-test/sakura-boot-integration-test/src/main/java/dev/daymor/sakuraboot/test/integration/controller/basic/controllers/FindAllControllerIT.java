@@ -44,13 +44,16 @@ import static org.mockito.BDDMockito.given;
 
 /**
  * The interface for find all controller integration tests.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete controller test class that inherits from
  * {@link FindAllControllerIT}, follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link FindAllControllerIT} class:
  * </p>

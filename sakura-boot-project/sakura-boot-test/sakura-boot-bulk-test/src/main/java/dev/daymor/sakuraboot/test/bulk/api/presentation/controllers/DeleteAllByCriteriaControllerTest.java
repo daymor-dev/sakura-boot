@@ -40,13 +40,16 @@ import static org.mockito.Mockito.verify;
  * The base test interface for all deleteAll by criteria controllers. This
  * interface provides common tests for testing
  * {@link DeleteAllByCriteriaController}.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete controller test class that inherits from
  * {@link DeleteAllByCriteriaControllerTest}, follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link DeleteAllByCriteriaControllerTest} class:
  * </p>

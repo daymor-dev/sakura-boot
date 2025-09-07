@@ -27,13 +27,16 @@ import dev.daymor.sakuraboot.bulk.api.presentation.controllers.UpdateAllControll
 
 /**
  * The base controller interface for bulk operations.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a controller interface that inherits from
  * {@link BasicBulkController}, follow these steps:
  * </p>
+ *
  * <p>
  * Create a new controller interface:
  * </p>
@@ -48,10 +51,12 @@ import dev.daymor.sakuraboot.bulk.api.presentation.controllers.UpdateAllControll
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * To create a controller class that implements {@link BasicBulkController},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Create a new controller class:
  * </p>

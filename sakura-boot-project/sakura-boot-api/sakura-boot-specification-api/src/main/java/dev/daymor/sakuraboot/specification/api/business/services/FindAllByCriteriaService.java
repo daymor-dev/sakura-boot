@@ -36,13 +36,16 @@ import dev.daymor.sakuraboot.specification.api.relationship.annotations.FindAllB
  * The {@link FindAllByCriteriaService} interface provides the contract for
  * performing CRUD operations with filtering
  * and pagination capabilities using criteria-based queries.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a service interface with filtering support that inherits from
  * {@link FindAllByCriteriaService}, follow these steps:
  * </p>
+ *
  * <p>
  * Create a new service interface:
  * </p>
@@ -56,10 +59,12 @@ import dev.daymor.sakuraboot.specification.api.relationship.annotations.FindAllB
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * To create a service class with filtering support that implements
  * {@link FindAllByCriteriaService}, follow these steps:
  * </p>
+ *
  * <p>
  * Create a new service class:
  * </p>

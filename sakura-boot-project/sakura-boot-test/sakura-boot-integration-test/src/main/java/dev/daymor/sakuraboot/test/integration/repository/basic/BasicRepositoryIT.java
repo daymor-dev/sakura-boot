@@ -39,13 +39,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * The interface for repository integration tests.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete test class that inherits from {@link BasicRepositoryIT},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link BasicRepositoryIT} class:
  * </p>

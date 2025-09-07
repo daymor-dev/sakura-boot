@@ -22,13 +22,16 @@ import dev.daymor.sakuraboot.test.BeanTest;
 /**
  * The base test interface for all filterPresentation. This interface provides
  * common tests for testing {@link FilterPresentation}.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete filterPresentation test class that inherits from
  * {@link FilterPresentationTest}, follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link FilterPresentationTest} class:
  * </p>

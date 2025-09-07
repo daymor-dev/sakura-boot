@@ -30,13 +30,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * The interface for all the utility functional test function. This interface
  * provides common functions for testing caching class.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete util class that inherits from {@link CachingFTUtil},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link CachingFTUtil} interface:
  * </p>

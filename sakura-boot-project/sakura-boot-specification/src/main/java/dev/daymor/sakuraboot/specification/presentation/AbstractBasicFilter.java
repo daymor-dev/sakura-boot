@@ -33,13 +33,16 @@ import dev.daymor.sakuraboot.util.ToStringUtils;
 /**
  * A base class representing a generic filter for queries parameters. Can
  * contain multiple {@link Filter} class for filtering different types.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a filter that inherits from {@link AbstractBasicFilter}, follow
  * these steps:
  * </p>
+ *
  * <p>
  * Create a new filter class:
  * </p>

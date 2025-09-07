@@ -44,13 +44,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * The super interface for controller integration tests.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete test class that inherits from {@link SuperControllerIT},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link SuperControllerIT} class:
  * </p>

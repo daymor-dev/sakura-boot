@@ -33,6 +33,7 @@ import org.springframework.core.annotation.AliasFor;
  * documentation for the API response for HTTP status code 200 (Success) when
  * the request is successful, and it will include links to related resources
  * such as self, update, delete, and all entities.
+ *
  * <p>
  * <b>Example:</b>
  * </p>

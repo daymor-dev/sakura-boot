@@ -22,14 +22,17 @@ import dev.daymor.sakuraboot.DataPresentation;
 
 /**
  * The interface for bulk functional tests.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete test class that inherits from {@link BulkFT},
  * follow
  * these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link BulkFT} class:
  * </p>

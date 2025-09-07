@@ -39,13 +39,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * The interface for patch all functional tests.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete test class that inherits from {@link PatchAllFT},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link PatchAllFT} class:
  * </p>

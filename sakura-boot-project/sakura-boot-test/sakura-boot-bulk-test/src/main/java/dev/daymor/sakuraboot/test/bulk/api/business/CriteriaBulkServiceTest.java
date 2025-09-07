@@ -31,13 +31,16 @@ import dev.daymor.sakuraboot.test.bulk.api.business.services.UpdateAllServiceTes
 /**
  * The base test interface for all criteria bulk services. This interface
  * provides common tests for testing {@link CriteriaBulkService}.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete service test class that inherits from
  * {@link CriteriaBulkServiceTest}, follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link CriteriaBulkServiceTest} class:
  * </p>

@@ -21,9 +21,11 @@ import dev.daymor.sakuraboot.util.ReflectionUtils;
 
 /**
  * Interface for all class that add mapping support needs to implement.
+ *
  * <p>
  * To create a class that implements {@link Mappable}, follow these steps:
  * </p>
+ *
  * <p>
  * Create a new class:
  * </p>

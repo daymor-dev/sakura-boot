@@ -26,13 +26,16 @@ import dev.daymor.sakuraboot.DataPresentation;
 /**
  * The super interface for all unit tests. This interface has no test but can be
  * used to simplify the access to the {@link SuperTestUtil} interface.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete test class that inherits from {@link SuperTest},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link SuperTest} class:
  * </p>

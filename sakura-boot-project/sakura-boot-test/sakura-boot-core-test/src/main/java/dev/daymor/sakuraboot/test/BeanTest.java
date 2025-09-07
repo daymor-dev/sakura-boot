@@ -42,13 +42,16 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
  * The base test interface for all bean class.
  * This interface provides common tests for testing getter, equals, hashCode,
  * and toString of java bean class.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete bean test class that inherits from {@link BeanTest},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link BeanTest} class:
  * </p>

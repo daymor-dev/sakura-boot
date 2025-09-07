@@ -29,13 +29,16 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
  * The test class for all CachingUtil. This class provides common tests for
  * testing {@link CachingUtil} with the {@link DefaultCachingUtil}
  * implementation.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a specific cachingUtilTest for your specific {@link CachingUtil}
  * that inherits from {@link CachingUtilTest}, follow these steps:
  * </p>
+ *
  * <p>
  * Create a new caching util test class:
  * </p>
@@ -48,6 +51,7 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * <b>NOTE:</b> This test class already have all the methods to test the
  * caching. All the getters are protected so you can customize the tests if

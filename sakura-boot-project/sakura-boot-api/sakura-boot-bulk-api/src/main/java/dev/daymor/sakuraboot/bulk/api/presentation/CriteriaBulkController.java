@@ -29,13 +29,16 @@ import dev.daymor.sakuraboot.specification.api.presentation.FilterPresentation;
 /**
  * The base controller interface for bulk operations with filtering capabilities
  * using criteria-based queries.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a controller interface with filtering support that inherits from
  * {@link CriteriaBulkController}, follow these steps:
  * </p>
+ *
  * <p>
  * Create a new controller interface:
  * </p>
@@ -50,10 +53,12 @@ import dev.daymor.sakuraboot.specification.api.presentation.FilterPresentation;
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * To create a controller class with filtering support that implements
  * {@link CriteriaBulkController}, follow these steps:
  * </p>
+ *
  * <p>
  * Create a new controller class:
  * </p>

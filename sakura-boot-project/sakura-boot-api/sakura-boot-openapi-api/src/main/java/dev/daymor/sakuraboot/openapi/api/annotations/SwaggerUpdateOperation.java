@@ -25,6 +25,7 @@ import java.lang.annotation.Target;
 /**
  * This annotation is used to indicate that the annotated method needs to have
  * the response updated by the swagger configuration.
+ *
  * <p>
  * <b>Use for framework internal methods.</b>
  * </p>

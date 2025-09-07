@@ -31,13 +31,16 @@ import dev.daymor.sakuraboot.test.SuperITUtil;
 /**
  * The interface for all the utility functional test function. This interface
  * provides common functions for testing basic class.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete util class that inherits from {@link SuperFTUtil},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link SuperFTUtil} interface:
  * </p>

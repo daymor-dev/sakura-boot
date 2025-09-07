@@ -77,13 +77,16 @@ import static org.hamcrest.Matchers.hasKey;
  * The super interface for all functional tests. This interface has no test but
  * can be used to simplify the access to the {@link SuperFTUtil} interface and
  * do functional test.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete test class that inherits from {@link SuperFT}, follow
  * these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link SuperFT} class:
  * </p>

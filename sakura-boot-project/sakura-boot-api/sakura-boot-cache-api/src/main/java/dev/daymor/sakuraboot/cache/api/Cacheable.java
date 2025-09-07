@@ -20,9 +20,11 @@ import dev.daymor.sakuraboot.SuperService;
 
 /**
  * Interface for all class that add cache support needs to implement.
+ *
  * <p>
  * To create a class that implements {@link Cacheable}, follow these steps:
  * </p>
+ *
  * <p>
  * Create a new class:
  * </p>

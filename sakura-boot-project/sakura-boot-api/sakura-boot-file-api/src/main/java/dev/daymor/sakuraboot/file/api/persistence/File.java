@@ -37,13 +37,16 @@ import dev.daymor.sakuraboot.util.ToStringUtils;
 
 /**
  * The base class for files.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create and use a {@link File} in one of your entity class, follow
  * these steps:
  * </p>
+ *
  * <p>
  * Add a {@link File} class in you entity class:
  * </p>

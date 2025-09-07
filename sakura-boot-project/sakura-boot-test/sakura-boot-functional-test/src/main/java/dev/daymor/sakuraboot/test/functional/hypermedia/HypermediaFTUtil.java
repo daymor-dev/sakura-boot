@@ -27,13 +27,16 @@ import dev.daymor.sakuraboot.test.functional.SuperFTUtil;
 /**
  * The interface for all the utility integration test function. This interface
  * provides common functions for testing hypermedia class.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete util class that inherits from {@link HypermediaFTUtil},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link HypermediaFTUtil} interface:
  * </p>

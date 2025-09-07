@@ -40,13 +40,16 @@ import static org.mockito.BDDMockito.given;
 /**
  * The base test interface for all services. This interface provides common
  * tests for testing {@link UpdateAllService}.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete service test class that inherits from
  * {@link UpdateAllServiceTest}, follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link UpdateAllServiceTest} class:
  * </p>

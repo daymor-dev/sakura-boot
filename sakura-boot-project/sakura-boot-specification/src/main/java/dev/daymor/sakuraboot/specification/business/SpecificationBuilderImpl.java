@@ -52,13 +52,16 @@ import dev.daymor.sakuraboot.specification.api.presentation.filters.TextFilter;
 /**
  * The {@link SpecificationBuilderImpl} base class provides methods for building
  * criteria-based specifications for {@link DataPresentation} filtering.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a specific specificationBuilder for your {@link DataPresentation}
  * that inherits from {@link SpecificationBuilderImpl}, follow these steps:
  * </p>
+ *
  * <p>
  * Create a new specification builder class:
  * </p>
@@ -71,6 +74,7 @@ import dev.daymor.sakuraboot.specification.api.presentation.filters.TextFilter;
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * <b>NOTE:</b> This class already have all the methods
  * to create great specifications. Some methods are protected so you can make

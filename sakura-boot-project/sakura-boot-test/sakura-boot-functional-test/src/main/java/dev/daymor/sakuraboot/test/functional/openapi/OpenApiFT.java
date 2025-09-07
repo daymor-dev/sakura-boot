@@ -28,13 +28,16 @@ import org.springframework.test.context.ActiveProfiles;
 
 /**
  * The interface for openapi functional tests.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete test class that inherits from {@link OpenApiFT},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link OpenApiFT} class:
  * </p>

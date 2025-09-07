@@ -25,13 +25,16 @@ import dev.daymor.sakuraboot.DataPresentation;
 /**
  * The super interface for all integration tests. This interface has no test but
  * can be used to simplify the access to the {@link SuperITUtil} interface.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete integration test class that inherits from
  * {@link SuperIT}, follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link SuperIT} class:
  * </p>

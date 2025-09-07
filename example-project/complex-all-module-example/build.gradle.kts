@@ -7,9 +7,9 @@ plugins {
 dependencies {
     developmentOnly(libs.spring.boot.docker.compose)
     implementation(projects.sakuraBootStarterPredefinedAllModule)
+    annotationProcessor(projects.sakuraBootMapper)
     annotationProcessor(libs.hibernate.jpamodelgen)
     annotationProcessor(libs.mapstruct.processor)
-    annotationProcessor(projects.sakuraBootMapper)
 
     functionalTestImplementation(projects.sakuraBootStarterPredefinedAllModuleFunctionalTest)
     functionalTestCompileOnly(libs.lombok)

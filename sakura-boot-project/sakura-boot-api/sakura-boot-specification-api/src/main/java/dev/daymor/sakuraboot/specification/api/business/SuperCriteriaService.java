@@ -29,13 +29,16 @@ import dev.daymor.sakuraboot.specification.api.presentation.FilterPresentation;
 
 /**
  * The base service interface with filtering.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a service interface that inherits from
  * {@link SuperCriteriaService}, follow these steps:
  * </p>
+ *
  * <p>
  * Create a new service interface:
  * </p>
@@ -47,10 +50,12 @@ import dev.daymor.sakuraboot.specification.api.presentation.FilterPresentation;
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * To create a service class that implements {@link SuperCriteriaService},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Create a new service class:
  * </p>

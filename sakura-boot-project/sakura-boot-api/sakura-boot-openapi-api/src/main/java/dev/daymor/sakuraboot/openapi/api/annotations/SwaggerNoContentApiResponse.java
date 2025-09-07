@@ -34,6 +34,7 @@ import org.springframework.core.annotation.AliasFor;
  * documentation for the API response for HTTP status code 204 (No Content) when
  * the request is successful, but there is no data to return in the response
  * body.
+ *
  * <p>
  * <b>Example:</b>
  * </p>

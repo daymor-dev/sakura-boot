@@ -33,13 +33,16 @@ import dev.daymor.sakuraboot.util.ToStringUtils;
 /**
  * The abstract base class for all Data Transfer Objects (DTOs). This class
  * provides common fields and methods that DTOs can inherit from.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create and use a concrete DTO class that inherits from
  * {@link AbstractBasicDto}, follow these steps:
  * </p>
+ *
  * <p>
  * Extend the {@link AbstractBasicDto} class using {@link FullData}:
  * </p>

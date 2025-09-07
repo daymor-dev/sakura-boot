@@ -30,9 +30,11 @@ import dev.daymor.sakuraboot.basic.api.persistence.BasicRepository;
  * {@link JpaSpecificationExecutor} via the {@link JpaRepositoryImplementation}
  * implementation, allowing the execution of Specifications based on the JPA
  * criteria API.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a repository for your {@link DataPresentation} with filtering
  * support that inherits from {@link CriteriaRepository}, follow these steps:

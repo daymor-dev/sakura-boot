@@ -38,13 +38,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * The base test class for all AbstractBasicEntity. This class provides common
  * tests for testing {@link AbstractBasicEntity}.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete AbstractBasicEntity test class that inherits from
  * {@link AbstractBasicEntityTest}, follow these steps:
  * </p>
+ *
  * <p>
  * Extends the {@link AbstractBasicEntityTest} class:
  * </p>

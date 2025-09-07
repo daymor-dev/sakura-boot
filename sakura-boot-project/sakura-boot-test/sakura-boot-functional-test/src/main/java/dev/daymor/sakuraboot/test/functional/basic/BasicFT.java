@@ -22,14 +22,17 @@ import dev.daymor.sakuraboot.DataPresentation;
 
 /**
  * The interface for basic functional tests.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete test class that inherits from {@link BasicFT},
  * follow
  * these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link BasicFT} class:
  * </p>

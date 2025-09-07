@@ -49,13 +49,16 @@ import dev.daymor.sakuraboot.util.RelationshipUtils;
 
 /**
  * The service interface for patchAll operation.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a service interface that inherits from {@link PatchAllService},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Create a new service interface:
  * </p>
@@ -67,10 +70,12 @@ import dev.daymor.sakuraboot.util.RelationshipUtils;
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * To create a service class that implements {@link PatchAllService}, follow
  * these steps:
  * </p>
+ *
  * <p>
  * Create a new service class:
  * </p>

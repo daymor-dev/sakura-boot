@@ -44,13 +44,16 @@ import static org.mockito.BDDMockito.given;
 /**
  * The base test interface for all download file controllers. This interface
  * provides common tests for testing {@link DownloadFileController}.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete controller test class that inherits from
  * {@link DownloadFileControllerTest}, follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link DownloadFileControllerTest} class:
  * </p>

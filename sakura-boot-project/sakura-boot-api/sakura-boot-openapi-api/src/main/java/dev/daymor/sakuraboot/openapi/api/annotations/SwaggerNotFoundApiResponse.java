@@ -34,6 +34,7 @@ import dev.daymor.sakuraboot.exceptions.ErrorResponse;
  * The method annotated with this meta-annotation will give the Swagger
  * documentation for the API response for HTTP status code 404 (Not Found) when
  * the requested resource is not found.
+ *
  * <p>
  * <b>Example:</b>
  * </p>

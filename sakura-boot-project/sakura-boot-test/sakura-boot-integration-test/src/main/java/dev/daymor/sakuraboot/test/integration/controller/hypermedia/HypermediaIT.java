@@ -23,13 +23,16 @@ import dev.daymor.sakuraboot.test.integration.controller.SuperControllerIT;
 
 /**
  * The interface for hypermedia controller integration tests.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete controller test class that inherits from
  * {@link HypermediaIT}, follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link HypermediaIT} interface:
  * </p>

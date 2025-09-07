@@ -36,13 +36,16 @@ import dev.daymor.sakuraboot.openapi.api.annotations.SwaggerUpdateOperation;
 
 /**
  * The base controller interface for save operation.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a controller interface that inherits from {@link SaveController},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Create a new controller interface:
  * </p>
@@ -57,10 +60,12 @@ import dev.daymor.sakuraboot.openapi.api.annotations.SwaggerUpdateOperation;
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * To create a controller class that implements {@link SaveController}, follow
  * these steps:
  * </p>
+ *
  * <p>
  * Create a new controller class:
  * </p>

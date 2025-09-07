@@ -30,13 +30,16 @@ import dev.daymor.sakuraboot.specification.api.presentation.controllers.FindAllB
 /**
  * The base controller interface for CRUD operations with filtering capabilities
  * using criteria-based queries.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a controller interface with filtering support that inherits from
  * {@link CriteriaController}, follow these steps:
  * </p>
+ *
  * <p>
  * Create a new controller interface:
  * </p>
@@ -51,10 +54,12 @@ import dev.daymor.sakuraboot.specification.api.presentation.controllers.FindAllB
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * To create a controller class with filtering support that implements
  * {@link CriteriaController}, follow these steps:
  * </p>
+ *
  * <p>
  * Create a new controller class:
  * </p>

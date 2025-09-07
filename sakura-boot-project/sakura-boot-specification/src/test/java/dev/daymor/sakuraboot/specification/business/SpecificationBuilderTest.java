@@ -68,14 +68,17 @@ import static org.mockito.Mockito.verify;
 /**
  * The {@link SpecificationBuilderTest} base class provides test for
  * criteria-based specifications for {@link DataPresentation} filtering.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a specific specificationBuilderTest for your specific
  * {@link SpecificationBuilder} that inherits from
  * {@link SpecificationBuilderTest}, follow these steps:
  * </p>
+ *
  * <p>
  * Create a new specification builder test class:
  * </p>
@@ -89,6 +92,7 @@ import static org.mockito.Mockito.verify;
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * <b>NOTE:</b> This test class already have all the methods to test the
  * specifications. All the getters are protected so you can customize the tests

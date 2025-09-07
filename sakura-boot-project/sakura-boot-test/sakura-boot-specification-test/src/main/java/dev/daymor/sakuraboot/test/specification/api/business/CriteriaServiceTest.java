@@ -33,13 +33,16 @@ import dev.daymor.sakuraboot.test.specification.api.business.services.FindAllByC
 /**
  * The base test interface for all criteria services. This interface provides
  * common tests for testing {@link CriteriaService}.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete service test class that inherits from
  * {@link CriteriaServiceTest}, follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link CriteriaServiceTest} class:
  * </p>

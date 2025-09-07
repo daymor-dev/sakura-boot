@@ -27,13 +27,16 @@ import dev.daymor.sakuraboot.specification.api.presentation.FilterPresentation;
 
 /**
  * The base service interface for bulk operations with filtering.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a service interface with filtering support that inherits from
  * {@link CriteriaBulkService}, follow these steps:
  * </p>
+ *
  * <p>
  * Create a new service interface:
  * </p>
@@ -47,10 +50,12 @@ import dev.daymor.sakuraboot.specification.api.presentation.FilterPresentation;
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * To create a service class with filtering support that implements
  * {@link CriteriaBulkService}, follow these steps:
  * </p>
+ *
  * <p>
  * Create a new service class:
  * </p>

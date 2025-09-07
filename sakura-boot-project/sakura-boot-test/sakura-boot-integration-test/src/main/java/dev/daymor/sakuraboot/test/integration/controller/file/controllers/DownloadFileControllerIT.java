@@ -45,13 +45,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 /**
  * The interface for DownloadFile controller integration tests.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete controller test class that inherits from
  * {@link DownloadFileControllerIT}, follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link DownloadFileControllerIT} class:
  * </p>

@@ -41,14 +41,17 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * The interface for delete by id functional tests.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete test class that inherits from {@link DeleteByIdFT},
  * follow
  * these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link DeleteByIdFT} class:
  * </p>

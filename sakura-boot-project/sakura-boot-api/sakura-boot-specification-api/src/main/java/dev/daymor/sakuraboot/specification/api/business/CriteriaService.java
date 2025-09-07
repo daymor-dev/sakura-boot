@@ -31,13 +31,16 @@ import dev.daymor.sakuraboot.specification.api.presentation.FilterPresentation;
  * The {@link CriteriaService} interface provides the contract for performing
  * CRUD operations with filtering and pagination capabilities using
  * criteria-based queries.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a service interface with filtering support that inherits from
  * {@link CriteriaService}, follow these steps:
  * </p>
+ *
  * <p>
  * Create a new service interface:
  * </p>
@@ -51,10 +54,12 @@ import dev.daymor.sakuraboot.specification.api.presentation.FilterPresentation;
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * To create a service class with filtering support that implements
  * {@link CriteriaService}, follow these steps:
  * </p>
+ *
  * <p>
  * Create a new service class:
  * </p>

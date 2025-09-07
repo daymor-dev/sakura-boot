@@ -22,13 +22,16 @@ import org.springframework.lang.Nullable;
 
 /**
  * The interface for all the utility test function.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete util class that inherits from {@link SuperTestUtil},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link SuperTestUtil} interface:
  * </p>

@@ -43,10 +43,12 @@ import dev.daymor.sakuraboot.util.RelationshipUtils;
 
 /**
  * Parent interface for defining a mapper that handles relationships.
+ *
  * <p>
  * To create a mapper that implements
  * {@link AbstractBasicMapperForRelationship}, follow these steps:
  * </p>
+ *
  * <p>
  * Create a new class:
  * </p>
@@ -75,6 +77,7 @@ import dev.daymor.sakuraboot.util.RelationshipUtils;
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * Or with MapStruct:
  * </p>

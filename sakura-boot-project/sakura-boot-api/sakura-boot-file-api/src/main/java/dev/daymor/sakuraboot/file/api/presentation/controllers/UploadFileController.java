@@ -37,13 +37,16 @@ import dev.daymor.sakuraboot.openapi.api.annotations.SwaggerOkApiResponse;
 
 /**
  * The controller interface for uploadFile operation.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a controller interface that inherits from
  * {@link UploadFileController}, follow these steps:
  * </p>
+ *
  * <p>
  * Create a new controller interface:
  * </p>
@@ -57,10 +60,12 @@ import dev.daymor.sakuraboot.openapi.api.annotations.SwaggerOkApiResponse;
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * To create a controller class that implements {@link UploadFileController},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Create a new controller class:
  * </p>

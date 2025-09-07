@@ -29,13 +29,16 @@ import dev.daymor.sakuraboot.basic.api.presentation.controllers.UpdateByIdContro
 
 /**
  * The base controller interface for CRUD operations.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a controller interface that inherits from {@link BasicController},
  * follow these steps:
  * </p>
+ *
  * <p>
  * Create a new controller interface:
  * </p>
@@ -50,10 +53,12 @@ import dev.daymor.sakuraboot.basic.api.presentation.controllers.UpdateByIdContro
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * To create a controller class that implements {@link BasicController}, follow
  * these steps:
  * </p>
+ *
  * <p>
  * Create a new controller class:
  * </p>

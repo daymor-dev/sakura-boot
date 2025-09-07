@@ -39,13 +39,16 @@ import static org.mockito.BDDMockito.given;
 
 /**
  * The interface for patch by id controller integration tests.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete controller test class that inherits from
  * {@link PatchByIdControllerIT}, follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link PatchByIdControllerIT} class:
  * </p>

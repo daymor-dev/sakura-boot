@@ -33,6 +33,7 @@ import org.springframework.core.annotation.AliasFor;
  * documentation for the API response for HTTP status code 201 (Created) when a
  * new entity is successfully created, and it will include links to related
  * resources such as self, update, delete, and all entities.
+ *
  * <p>
  * <b>Example:</b>
  * </p>

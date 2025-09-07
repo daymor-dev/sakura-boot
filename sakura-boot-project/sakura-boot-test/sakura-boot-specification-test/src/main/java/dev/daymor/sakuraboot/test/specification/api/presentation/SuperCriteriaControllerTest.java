@@ -32,13 +32,16 @@ import dev.daymor.sakuraboot.util.ReflectionUtils;
 
 /**
  * The super test interface for all controllers with filtering.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete service test class that inherits from
  * {@link SuperCriteriaControllerTest}, follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link SuperCriteriaControllerTest} class:
  * </p>

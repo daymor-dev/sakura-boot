@@ -25,9 +25,11 @@ import dev.daymor.sakuraboot.DataPresentation;
 
 /**
  * Parent interface for defining a mapper.
+ *
  * <p>
  * To create a mapper that implements {@link BasicMapper}, follow these steps:
  * </p>
+ *
  * <p>
  * Create a new class:
  * </p>
@@ -55,6 +57,7 @@ import dev.daymor.sakuraboot.DataPresentation;
  * </pre>
  *
  * </blockquote>
+ *
  * <p>
  * Or with MapStruct:
  * </p>

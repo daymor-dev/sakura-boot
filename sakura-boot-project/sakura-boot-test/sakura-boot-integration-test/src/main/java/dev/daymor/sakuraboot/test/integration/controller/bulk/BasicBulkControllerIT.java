@@ -31,13 +31,16 @@ import dev.daymor.sakuraboot.test.integration.controller.bulk.controllers.Update
 /**
  * The base integration test interface for all bulk controllers. This interface
  * provides common integration tests for testing {@link BasicBulkController}.
+ *
  * <p>
  * <b>Example:</b>
  * </p>
+ *
  * <p>
  * To create a concrete controller integration test class that inherits from
  * {@link BasicBulkControllerIT}, follow these steps:
  * </p>
+ *
  * <p>
  * Implements the {@link BasicBulkControllerIT} class:
  * </p>
