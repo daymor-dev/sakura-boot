@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2025 Malcolm Rozé.
+ * Copyright (C) 2025 Malcolm Rozé.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,7 +47,8 @@ import dev.daymor.sakuraboot.test.specification.api.business.services.FindAllByC
  *
  * <pre>
  * public class YourServiceTest
- *     implements CriteriaServiceTest&lt;YourEntity, YourIdType, YourFilter&gt; {
+ *     implements \\
+ *     CriteriaServiceTest&lt;YourEntity, YourIdType, YourFilter&gt; {
  *
  *     private YourUtil util = new YourUtil();
  *

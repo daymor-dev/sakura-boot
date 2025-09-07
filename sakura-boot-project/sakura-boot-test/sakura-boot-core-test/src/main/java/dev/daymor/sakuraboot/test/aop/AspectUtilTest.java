@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2025 Malcolm Rozé.
+ * Copyright (C) 2025 Malcolm Rozé.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -553,7 +553,6 @@ public interface AspectUtilTest {
                     getJoinPoint().getSignature(), annotation, ""
                 });
             /*@formatter:on*/
-
             // THEN
             final String expectedString = String.format(
                 LOG_PARAMETER_PATTERN.matcher(METHOD_CALL_LOG).replaceAll("%s"),
@@ -678,7 +677,6 @@ public interface AspectUtilTest {
                     getJoinPoint().getSignature(), annotation, ""
                 });
             /*@formatter:on*/
-
             // THEN
             assertThat(listAppender.list).isEmpty();
         });
@@ -704,7 +702,6 @@ public interface AspectUtilTest {
                     getJoinPoint().getSignature(), annotation, ""
                 });
             /*@formatter:on*/
-
             // THEN
             assertThat(listAppender.list)
                 .extracting(ILoggingEvent::getFormattedMessage,

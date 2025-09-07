@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2025 Malcolm Rozé.
+ * Copyright (C) 2025 Malcolm Rozé.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,7 +51,7 @@ import dev.daymor.sakuraboot.openapi.api.annotations.SwaggerUpdateOperation;
  * Create a new controller interface:
  * </p>
  * <blockquote>
- * 
+ *
  * <pre>
  * public interface YourController
  *     extends //
@@ -59,7 +59,7 @@ import dev.daymor.sakuraboot.openapi.api.annotations.SwaggerUpdateOperation;
  *     // Add your methods signature here
  * }
  * </pre>
- * 
+ *
  * </blockquote>
  * <p>
  * To create a controller class that implements {@link SaveAllController},
@@ -69,29 +69,29 @@ import dev.daymor.sakuraboot.openapi.api.annotations.SwaggerUpdateOperation;
  * Create a new controller class:
  * </p>
  * <blockquote>
- * 
+ *
  * <pre>
  * &#064;RestController
  * &#064;RequestMapping("/yourPath")
  * public class YourController
  *     implements //
  *     SaveAllController&lt;YourEntity, YourIdType, YourDataPresentation&gt; {
- * 
+ *
  *     // Or implements your interface that extends SaveController.
  *     private final YourService service;
- * 
+ *
  *     public YourController(final YourService service) {
- * 
+ *
  *         this.service = service;
  *     }
- * 
+ *
  *     public YourService getService() {
- * 
+ *
  *         return this.service;
  *     }
  * }
  * </pre>
- * 
+ *
  * </blockquote>
  *
  * @param  <E> The {@link DataPresentation} type use in the service layer.

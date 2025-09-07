@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2025 Malcolm Rozé.
+ * Copyright (C) 2025 Malcolm Rozé.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -63,7 +63,8 @@ import dev.daymor.sakuraboot.test.SuperITUtil;
  *     }
  *
  *     &#064;Override
- *     public Optional&lt;YourEntity&gt; createValidationErrorEntity(YourIdType id) {
+ *     public Optional&lt;YourEntity&gt; \\
+ *         createValidationErrorEntity(YourIdType id) {
  *
  *         return YourEntity.builder().id(id).build();
  *         // If your class don't have a builder you can use the constructor

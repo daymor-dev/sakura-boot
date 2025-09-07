@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2025 Malcolm Rozé.
+ * Copyright (C) 2025 Malcolm Rozé.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,41 +51,41 @@ import dev.daymor.sakuraboot.util.RelationshipUtils;
  * Create a new class:
  * </p>
  * <blockquote>
- * 
+ *
  * <pre>
  * public class YourMapper
  *     extends AbstractBasicMapperForRelationship&lt;YourEntity, YourDto&gt; {
- * 
+ *
  *     &#064;Override
  *     public YourEntity toEntity(final YourDto dto) {
- * 
+ *
  *         // Use your prefer mapper to map or manually map using the entity
  *         // constructor.
  *         return mapper.toEntity(dto);
  *     }
- * 
+ *
  *     &#064;Override
  *     public YourDto toDto(final YourEntity entity) {
- * 
+ *
  *         // Use your prefer mapper to map or manually map using the dto
  *         // constructor.
  *         return mapper.toDto(entity);
  *     }
  * }
  * </pre>
- * 
+ *
  * </blockquote>
  * <p>
  * Or with MapStruct:
  * </p>
  * <blockquote>
- * 
+ *
  * <pre>
  * &#064;Mapper(config = BasicMapper.class)
  * public abstract class AbstractYourMapper
  *     extends AbstractBasicMapperForRelationship&lt;YourEntity, YourDto&gt; {}
  * </pre>
- * 
+ *
  * </blockquote>
  *
  * @param  <E> The entity type extending {@link DataPresentation}.

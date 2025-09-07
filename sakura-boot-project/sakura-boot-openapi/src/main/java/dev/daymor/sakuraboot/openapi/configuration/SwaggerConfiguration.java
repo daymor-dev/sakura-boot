@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2025 Malcolm Rozé.
+ * Copyright (C) 2025 Malcolm Rozé.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -369,7 +369,6 @@ public class SwaggerConfiguration {
             && parameterizedTypeResult.getActualTypeArguments()[1]
             instanceof final Class<?> classTypeResult) {
             /* @formatter:on */
-
             return classTypeResult;
         }
         return Object.class;
