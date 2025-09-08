@@ -47,6 +47,11 @@ import static org.mockito.Mockito.mock;
 class SaveRelationshipAspectTest implements AspectUtilTest {
 
     /**
+     * The business name.
+     */
+    private static final String BUSINESS = "business";
+
+    /**
      * The mock {@link ProceedingJoinPoint}.
      */
     @Mock
@@ -65,7 +70,7 @@ class SaveRelationshipAspectTest implements AspectUtilTest {
     @Getter
     private final SaveRelationshipAspect<DataPresentation<Long>, Long> aspect
         = new SaveRelationshipAspect<>(new GlobalSpecification("persistence",
-            "business", "business", "business", "presentation"));
+            BUSINESS, BUSINESS, BUSINESS, "presentation"));
 
     @ParameterizedTest
     @MethodSource("getParams")

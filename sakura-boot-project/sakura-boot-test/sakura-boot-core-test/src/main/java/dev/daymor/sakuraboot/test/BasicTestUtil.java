@@ -121,7 +121,7 @@ public interface BasicTestUtil<E extends DataPresentation<I>,
      */
     default String getDtoPackageName() {
 
-        return "business";
+        return getServicePackageName();
     }
 
     /**
@@ -131,7 +131,7 @@ public interface BasicTestUtil<E extends DataPresentation<I>,
      */
     default String getMapperPackageName() {
 
-        return "business";
+        return getServicePackageName();
     }
 
     /**

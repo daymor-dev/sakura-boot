@@ -181,6 +181,25 @@ public interface AspectUtil {
         return value;
     }
 
+    private static EvaluationContext prepareContext(
+        final String[] parameterNames, final Object[] args) {
+
+        if (parameterNames.length != args.length) {
+
+            throw new IllegalArgumentException(
+                "Exception in aspect method when parsing SpEL expression:"
+                    + " parameterNames and args aren't of the same length.");
+        }
+
+        final EvaluationContext context = new StandardEvaluationContext();
+
+        for (int i = 0; i < parameterNames.length; i++) {
+
+            context.setVariable(parameterNames[i], args[i]);
+        }
+        return context;
+    }
+
     /**
      * The function parses a SpEL expression using the given parameter names,
      * arguments, and expression string, then returns the result as an Object.
@@ -228,20 +247,9 @@ public interface AspectUtil {
         final String[] parameterNames, final Object[] args,
         final String expression, final Class<T> returnType) {
 
-        if (parameterNames.length != args.length) {
-
-            throw new IllegalArgumentException(
-                "Exception in aspect method when parsing SpEL expression:"
-                    + " parameterNames and args aren't of the same length.");
-        }
-
+        final EvaluationContext context = prepareContext(parameterNames, args);
         final ExpressionParser parser = new SpelExpressionParser();
-        final EvaluationContext context = new StandardEvaluationContext();
 
-        for (int i = 0; i < parameterNames.length; i++) {
-
-            context.setVariable(parameterNames[i], args[i]);
-        }
         return parser.parseExpression(expression).getValue(context, returnType);
     }
 
@@ -300,20 +308,9 @@ public interface AspectUtil {
         final String[] parameterNames, final Object[] args,
         final String expression, final int index, final Class<T> returnType) {
 
-        if (parameterNames.length != args.length) {
-
-            throw new IllegalArgumentException(
-                "Exception in aspect method when parsing SpEL expression:"
-                    + " parameterNames and args aren't of the same length.");
-        }
-
+        final EvaluationContext context = prepareContext(parameterNames, args);
         final ExpressionParser parser = new SpelExpressionParser();
-        final EvaluationContext context = new StandardEvaluationContext();
 
-        for (int i = 0; i < parameterNames.length; i++) {
-
-            context.setVariable(parameterNames[i], args[i]);
-        }
         return parser
             .parseExpression(expression.replace("[i]", "[" + index + "]"))
             .getValue(context, returnType);

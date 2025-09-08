@@ -127,7 +127,7 @@ public interface BasicModelAssemblerTest<
      */
     default String getDtoPackageName() {
 
-        return "business";
+        return getServicePackageName();
     }
 
     /**
@@ -137,7 +137,7 @@ public interface BasicModelAssemblerTest<
      */
     default String getMapperPackageName() {
 
-        return "business";
+        return getServicePackageName();
     }
 
     /**

@@ -212,39 +212,24 @@
                       org.junit.internal.matchers.ThrowableMessageMatcher.*,
                       org.hamcrest.CoreMatchers.*,
                       org.hamcrest.Matchers.*,
-                      org.springframework.boot.configurationprocessor.
-                      ConfigurationMetadataMatchers.*,
-                      org.springframework.boot.configurationprocessor.
-                      TestCompiler.*,
-                      org.springframework.boot.test.autoconfigure.
-                      AutoConfigurationImportedCondition.*,
+                      org.springframework.boot.configurationprocessor.ConfigurationMetadataMatchers.*,
+                      org.springframework.boot.configurationprocessor.TestCompiler.*,
+                      org.springframework.boot.test.autoconfigure.AutoConfigurationImportedCondition.*,
                       org.mockito.Mockito.*, org.mockito.BDDMockito.*,
                       org.mockito.Matchers.*,
                       org.mockito.ArgumentMatchers.*,
-                      org.springframework.restdocs.mockmvc.
-                      MockMvcRestDocumentation.*,
-                      org.springframework.restdocs.hypermedia.
-                      HypermediaDocumentation.*,
-                      org.springframework.test.web.servlet.request.
-                      MockMvcRequestBuilders.*,
-                      org.springframework.test.web.servlet.result.
-                      MockMvcResultMatchers.*,
-                      org.springframework.security.test.web.servlet.request.
-                      SecurityMockMvcRequestBuilders.*,
-                      org.springframework.security.test.web.servlet.request.
-                      SecurityMockMvcRequestPostProcessors.*,
-                      org.springframework.security.test.web.servlet.setup.
-                      SecurityMockMvcConfigurers.*,
-                      org.springframework.test.web.client.match.
-                      MockRestRequestMatchers.*,
-                      org.springframework.test.web.client.response.
-                      MockRestResponseCreators.*,
-                      org.springframework.web.reactive.function.server.
-                      RequestPredicates.*,
-                      org.springframework.web.reactive.function.server.
-                      RouterFunctions.*,
-                      org.springframework.test.web.servlet.setup.
-                      MockMvcBuilders.*"/>
+                      org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.*,
+                      org.springframework.restdocs.hypermedia.HypermediaDocumentation.*,
+                      org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*,
+                      org.springframework.test.web.servlet.result.MockMvcResultMatchers.*,
+                      org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestBuilders.*,
+                      org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.*,
+                      org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.*,
+                      org.springframework.test.web.client.match.MockRestRequestMatchers.*,
+                      org.springframework.test.web.client.response.MockRestResponseCreators.*,
+                      org.springframework.web.reactive.function.server.RequestPredicates.*,
+                      org.springframework.web.reactive.function.server.RouterFunctions.*,
+                      org.springframework.test.web.servlet.setup.MockMvcBuilders.*"/>
         </module>
         <module name="CustomImportOrder">
             <property name="customImportOrderRules"
