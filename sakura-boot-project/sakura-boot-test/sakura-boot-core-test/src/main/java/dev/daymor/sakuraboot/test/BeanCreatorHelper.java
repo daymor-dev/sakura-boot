@@ -284,39 +284,35 @@ public final class BeanCreatorHelper {
     @Nullable
     private static Object generateValueForDate(final Class<?> clazz) {
 
+        final Object result;
+
         if (clazz == LocalTime.class) {
 
-            return LocalTime.of(RANDOM.nextInt(HOURS), RANDOM.nextInt(MINUTES))
+            result
+                = LocalTime.of(RANDOM.nextInt(HOURS), RANDOM.nextInt(MINUTES))
+                    .truncatedTo(ChronoUnit.MICROS);
+        } else if (clazz == LocalDate.class) {
+
+            result = LocalDate.now();
+        } else if (clazz == LocalDateTime.class) {
+
+            result = LocalDateTime.now().truncatedTo(ChronoUnit.MICROS);
+        } else if (clazz == ZonedDateTime.class) {
+
+            result = ZonedDateTime.now(ZoneId.of("UTC"))
                 .truncatedTo(ChronoUnit.MICROS);
-        }
+        } else if (clazz == OffsetDateTime.class) {
 
-        if (clazz == LocalDate.class) {
-
-            return LocalDate.now();
-        }
-
-        if (clazz == LocalDateTime.class) {
-
-            return LocalDateTime.now().truncatedTo(ChronoUnit.MICROS);
-        }
-
-        if (clazz == ZonedDateTime.class) {
-
-            return ZonedDateTime.now(ZoneId.of("UTC"))
+            result = OffsetDateTime.now(ZoneId.of("UTC"))
                 .truncatedTo(ChronoUnit.MICROS);
+        } else if (clazz == Instant.class) {
+
+            result = Instant.now().truncatedTo(ChronoUnit.MICROS);
+        } else {
+
+            result = null;
         }
-
-        if (clazz == OffsetDateTime.class) {
-
-            return OffsetDateTime.now(ZoneId.of("UTC"))
-                .truncatedTo(ChronoUnit.MICROS);
-        }
-
-        if (clazz == Instant.class) {
-
-            return Instant.now().truncatedTo(ChronoUnit.MICROS);
-        }
-        return null;
+        return result;
     }
 
     private static Object generateCollectionForType(
@@ -411,105 +407,90 @@ public final class BeanCreatorHelper {
             = ReflectionUtils.getClassInfo(type, parentClassInfo);
         final Class<?> clazz = classInfo.clazz();
 
+        final Object result;
+
         if (clazz == boolean.class || clazz == Boolean.class) {
 
-            return RANDOM.nextBoolean();
-        }
-
-        if (clazz == byte.class || clazz == Byte.class) {
+            result = RANDOM.nextBoolean();
+        } else if (clazz == byte.class || clazz == Byte.class) {
 
             final byte[] bytes = new byte[1];
             RANDOM.nextBytes(bytes);
-            return bytes[0];
-        }
+            result = bytes[0];
+        } else if (clazz == short.class || clazz == Short.class) {
 
-        if (clazz == short.class || clazz == Short.class) {
+            result = (short) RANDOM.nextInt(Short.MAX_VALUE + 1);
+        } else if (clazz == int.class || clazz == Integer.class) {
 
-            return (short) RANDOM.nextInt(Short.MAX_VALUE + 1);
-        }
+            result = RANDOM.nextInt();
+        } else if (clazz == long.class || clazz == Long.class) {
 
-        if (clazz == int.class || clazz == Integer.class) {
+            result = RANDOM.nextLong();
+        } else if (clazz == float.class || clazz == Float.class) {
 
-            return RANDOM.nextInt();
-        }
+            result = RANDOM.nextFloat();
+        } else if (clazz == double.class || clazz == Double.class) {
 
-        if (clazz == long.class || clazz == Long.class) {
+            result = RANDOM.nextDouble();
+        } else if (clazz == char.class || clazz == Character.class) {
 
-            return RANDOM.nextLong();
-        }
+            result = RandomStringUtils.randomAlphabetic(1).charAt(0);
+        } else if (clazz == String.class) {
 
-        if (clazz == float.class || clazz == Float.class) {
+            result = RandomStringUtils.randomAlphabetic(STRING_SIZE);
+        } else if (clazz == UUID.class) {
 
-            return RANDOM.nextFloat();
-        }
+            result = UUID.randomUUID();
+        } else if (Temporal.class.isAssignableFrom(clazz)) {
 
-        if (clazz == double.class || clazz == Double.class) {
-
-            return RANDOM.nextDouble();
-        }
-
-        if (clazz == char.class || clazz == Character.class) {
-
-            return RandomStringUtils.randomAlphabetic(1).charAt(0);
-        }
-
-        if (clazz == String.class) {
-
-            return RandomStringUtils.randomAlphabetic(STRING_SIZE);
-        }
-
-        if (clazz == UUID.class) {
-
-            return UUID.randomUUID();
-        }
-
-        if (Temporal.class.isAssignableFrom(clazz)) {
-
-            return generateValueForDate(clazz);
-        }
-
-        if (clazz.isArray()) {
+            result = generateValueForDate(clazz);
+        } else if (clazz.isArray()) {
 
             final Class<?> componentType = clazz.getComponentType();
 
             if (origins.contains(componentType)) {
 
-                return originsInstances.stream()
+                result = originsInstances.stream()
                     .filter(componentType::isInstance)
                     .findFirst()
                     .orElse(null);
-            }
-            final Object array = Array.newInstance(componentType, 1);
-            origins.add(componentType);
-            Array.set(array, 0, generateValueForType(componentType,
-                parentClassInfo, origins, originsInstances));
-            origins.remove(componentType);
-            return array;
-        }
+            } else {
 
-        if (Collection.class.isAssignableFrom(clazz)
+                final Object array = Array.newInstance(componentType, 1);
+                origins.add(componentType);
+                Array.set(array, 0, generateValueForType(componentType,
+                    parentClassInfo, origins, originsInstances));
+                origins.remove(componentType);
+                result = array;
+            }
+        } else if (Collection.class.isAssignableFrom(clazz)
             || Map.class.isAssignableFrom(clazz)) {
 
-            return generateCollectionForType(classInfo, origins,
+            result = generateCollectionForType(classInfo, origins,
                 originsInstances);
-        }
+        } else {
 
-        try {
+            try {
 
-            if (!origins.isEmpty()
-                && origins.subList(0, origins.size() - 1).contains(clazz)) {
+                if (!origins.isEmpty()
+                    && origins.subList(0, origins.size() - 1).contains(clazz)) {
 
-                return originsInstances.stream()
-                    .filter(clazz::isInstance)
-                    .findFirst()
-                    .orElse(null);
+                    result = originsInstances.stream()
+                        .filter(clazz::isInstance)
+                        .findFirst()
+                        .orElse(null);
+                } else {
+
+                    result = createBeanFromConstructor(classInfo, false,
+                        origins, originsInstances);
+                }
+            } catch (final InstantiationException ex) {
+
+                return null;
             }
-            return createBeanFromConstructor(classInfo, false, origins,
-                originsInstances);
-        } catch (final InstantiationException ex) {
-
-            return null;
         }
+
+        return result;
     }
 
     /**

@@ -20,12 +20,14 @@ import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.SerializationUtils;
@@ -87,6 +89,49 @@ public final class DataCreatorHelper {
         return data;
     }
 
+    @Nullable
+    private static
+        Object getFieldValue(final Object target, final String name) {
+
+        try {
+
+            final Field field = target.getClass().getDeclaredField(name);
+            field.setAccessible(true);
+            return field.get(target);
+        } catch (final NoSuchFieldException | IllegalAccessException e) {
+
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static void setFieldValue(
+        final Object target, final String name, @Nullable final Object value) {
+
+        try {
+
+            final Field field = target.getClass().getDeclaredField(name);
+            field.setAccessible(true);
+            field.set(target, value);
+        } catch (final NoSuchFieldException ignored) {
+
+            // Ignore field
+        } catch (final IllegalAccessException e) {
+
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static void visitIfNotVisited(
+        @Nullable final DataPresentation<?> candidate,
+        final List<DataPresentation<?>> visited,
+        final Consumer<DataPresentation<?>> updater) {
+
+        if (candidate != null && !visited.contains(candidate)) {
+
+            updater.accept(candidate);
+        }
+    }
+
     private static <
         D extends DataPresentation<I>,
         I extends Comparable<? super I> & Serializable> void
@@ -110,101 +155,84 @@ public final class DataCreatorHelper {
         }
 
         RelationshipUtils.doWithRelationFields(dataForIds,
-            (final Field field, final Object relationshipForIds) -> {
+            (
+                final Field field,
+                final Object relationshipForIds) -> updateRelationshipIdNotNull(
+                    data, visited, globalSpecification, field,
+                    relationshipForIds),
+            (
+                final Field field,
+                final Collection<
+                    ?> relationshipsForIds) -> updateRelationshipsIdNotNull(
+                        data, visited, globalSpecification, field,
+                        relationshipsForIds),
+            globalSpecification);
+    }
 
-                if (relationshipForIds instanceof final DataPresentation<
-                    ?> relationshipDataForIds) {
+    private static <
+        D extends DataPresentation<I>,
+        I extends Comparable<? super I> & Serializable> void
+        updateRelationshipIdNotNull(
+            final D data, final List<DataPresentation<?>> visited,
+            final GlobalSpecification globalSpecification, final Field field,
+            final Object relationshipForIds) {
 
-                    final DataPresentation<?> relationship;
+        if (relationshipForIds instanceof final DataPresentation<
+            ?> relationshipDataForIds) {
 
-                    try {
+            final DataPresentation<?> relationship
+                = (DataPresentation<?>) getFieldValue(data, field.getName());
+            visitIfNotVisited(relationship, visited,
+                r -> updateIdDataNotNull(relationshipDataForIds, r, visited,
+                    globalSpecification));
+            setFieldValue(data, field.getName() + "Id",
+                relationshipDataForIds.getId());
+        }
+    }
 
-                        final Field relationshipField
-                            = data.getClass().getDeclaredField(field.getName());
-                        relationshipField.setAccessible(true);
-                        relationship
-                            = (DataPresentation<?>) relationshipField.get(data);
-                    } catch (final NoSuchFieldException
-                        | IllegalAccessException e) {
+    private static <
+        D extends DataPresentation<I>,
+        I extends Comparable<? super I> & Serializable> void
+        updateRelationshipsIdNotNull(
+            final D data, final List<DataPresentation<?>> visited,
+            final GlobalSpecification globalSpecification, final Field field,
+            final Collection<?> relationshipsForIds) {
 
-                        throw new RuntimeException(e);
-                    }
+        final Iterator<?> relationships;
+        final Object fieldValue = getFieldValue(data, field.getName());
 
-                    if (relationship != null
-                        && !visited.contains(relationship)) {
+        if (fieldValue != null) {
 
-                        updateIdDataNotNull(relationshipDataForIds,
-                            relationship, visited, globalSpecification);
-                    }
+            relationships = ((Iterable<?>) fieldValue).iterator();
+        } else {
 
-                    try {
+            relationships = Collections.emptyIterator();
+        }
 
-                        final Field relationIdField = data.getClass()
-                            .getDeclaredField(field.getName() + "Id");
-                        relationIdField.setAccessible(true);
-                        relationIdField.set(data,
-                            relationshipDataForIds.getId());
-                    } catch (final IllegalAccessException
-                        | NoSuchFieldException e) {
+        for (final Object relationshipForIds: relationshipsForIds) {
 
-                        return;
-                    }
+            if (relationshipForIds instanceof final DataPresentation<
+                ?> relationshipDataForIds) {
+
+                if (!relationships.hasNext()) {
+
+                    break;
                 }
-            }, (final Field field, final Collection<?> relationshipsForIds) -> {
+                final DataPresentation<?> relationship
+                    = (DataPresentation<?>) relationships.next();
+                visitIfNotVisited(relationship, visited,
+                    r -> updateIdDataNotNull(relationshipDataForIds, r, visited,
+                        globalSpecification));
+            }
+        }
 
-                final Iterator<?> relationships;
-
-                try {
-
-                    final Field relationshipField
-                        = data.getClass().getDeclaredField(field.getName());
-                    relationshipField.setAccessible(true);
-                    relationships = ((Iterable<?>) relationshipField.get(data))
-                        .iterator();
-                } catch (final NoSuchFieldException
-                    | IllegalAccessException e) {
-
-                    throw new RuntimeException(e);
-                }
-
-                for (final Object relationshipForIds: relationshipsForIds) {
-
-                    if (relationshipForIds instanceof final DataPresentation<
-                        ?> relationshipDataForIds) {
-
-                        if (!relationships.hasNext()) {
-
-                            break;
-                        }
-                        final DataPresentation<?> relationship
-                            = (DataPresentation<?>) relationships.next();
-
-                        if (!visited.contains(relationship)) {
-
-                            updateIdDataNotNull(relationshipDataForIds,
-                                relationship, visited, globalSpecification);
-                        }
-                    }
-                }
-
-                try {
-
-                    final Field relationsIdField = data.getClass()
-                        .getDeclaredField(field.getName() + "Id");
-                    relationsIdField.setAccessible(true);
-                    relationsIdField.set(data,
-                        relationshipsForIds.stream()
-                            .filter(DataPresentation.class::isInstance)
-                            .map(DataPresentation.class::cast)
-                            .map(relationship -> relationship.getId())
-                            .filter(Objects::nonNull)
-                            .collect(Collectors.toUnmodifiableSet()));
-                } catch (final IllegalAccessException
-                    | NoSuchFieldException e) {
-
-                    return;
-                }
-            }, globalSpecification);
+        setFieldValue(data, field.getName() + "Id",
+            relationshipsForIds.stream()
+                .filter(DataPresentation.class::isInstance)
+                .map(DataPresentation.class::cast)
+                .map(DataPresentation<I>::getId)
+                .filter(Objects::nonNull)
+                .collect(Collectors.toUnmodifiableSet()));
     }
 
     private static <
@@ -228,57 +256,54 @@ public final class DataCreatorHelper {
         }
 
         RelationshipUtils.doWithRelationFields(data,
-            (final Field field, final Object relationship) -> {
+            (
+                final Field field,
+                final Object relationship) -> updateRelationshipIdNull(data,
+                    visited, globalSpecification, relationship),
+            (
+                final Field field,
+                final Collection<?> relationships) -> updateRelationshipsIdNull(
+                    data, visited, globalSpecification, relationships),
+            globalSpecification);
+    }
 
-                if (relationship instanceof final DataPresentation<
-                    ?> relationshipData) {
+    private static <
+        D extends DataPresentation<I>,
+        I extends Comparable<? super I> & Serializable> void
+        updateRelationshipIdNull(
+            final D data, final List<DataPresentation<?>> visited,
+            final GlobalSpecification globalSpecification,
+            final Object relationship) {
 
-                    if (!visited.contains(relationshipData)) {
+        if (relationship instanceof final DataPresentation<
+            ?> relationshipData) {
 
-                        updateIdNull(relationshipData, visited,
-                            globalSpecification);
-                    }
+            visitIfNotVisited(relationshipData, visited,
+                r -> updateIdNull(r, visited, globalSpecification));
+            setFieldValue(data,
+                relationshipData.getClass().getSimpleName() + "Id", null);
+        }
+    }
 
-                    try {
+    private static <
+        D extends DataPresentation<I>,
+        I extends Comparable<? super I> & Serializable> void
+        updateRelationshipsIdNull(
+            final D data, final List<DataPresentation<?>> visited,
+            final GlobalSpecification globalSpecification,
+            final Collection<?> relationships) {
 
-                        final Field relationIdField = data.getClass()
-                            .getDeclaredField(
-                                relationshipData.getClass().getSimpleName()
-                                    + "Id");
-                        relationIdField.setAccessible(true);
-                        relationIdField.set(data, null);
-                    } catch (final IllegalAccessException
-                        | NoSuchFieldException e) {
+        for (final Object relationship: relationships) {
 
-                        return;
-                    }
-                }
-            }, (final Field field, final Collection<?> relationships) -> {
+            if (relationship instanceof final DataPresentation<
+                ?> relationshipData) {
 
-                for (final Object relationship: relationships) {
-
-                    if (relationship instanceof final DataPresentation<
-                        ?> relationshipData
-                        && !visited.contains(relationshipData)) {
-
-                        updateIdNull(relationshipData, visited,
-                            globalSpecification);
-                    }
-                }
-
-                try {
-
-                    final Field relationsIdField = data.getClass()
-                        .getDeclaredField(
-                            relationships.getClass().getSimpleName() + "Id");
-                    relationsIdField.setAccessible(true);
-                    relationsIdField.set(data, Set.of());
-                } catch (final IllegalAccessException
-                    | NoSuchFieldException e) {
-
-                    return;
-                }
-            }, globalSpecification);
+                visitIfNotVisited(relationshipData, visited,
+                    r -> updateIdNull(r, visited, globalSpecification));
+            }
+        }
+        setFieldValue(data, relationships.getClass().getSimpleName() + "Id",
+            Set.of());
     }
 
     /**

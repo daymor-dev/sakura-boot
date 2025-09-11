@@ -94,21 +94,23 @@ public final class SaveAllRelationshipAspect<D extends DataPresentation<I>,
 
         methodCallLog(log, joinPoint, target, annotation);
 
+        /* @formatter:off */
         arg.forEach(entity ->
 
-        RelationshipUtils.doWithRelationFields(entity,
-            (final Field field, final Object object) -> {
+            RelationshipUtils.doWithRelationFields(entity,
+                (final Field field, final Object object) -> {
 
-                if (object instanceof final DataPresentation<?> data
-                    && data.getId() != null) {
+                    if (object instanceof final DataPresentation<?> data
+                        && data.getId() != null) {
 
-                    throw new BadRequestException(
-                        """
-                        Can't save an entity when the relationship already
-                        has an ID
-                        """);
-                }
-            }, globalSpecification));
+                        throw new BadRequestException(
+                            """
+                            Can't save an entity when the relationship already
+                            has an ID
+                            """);
+                    }
+                }, globalSpecification));
+        /* @formatter:on */
         final Object result = joinPoint.proceed();
 
         methodEndLog(log, joinPoint, target, annotation);

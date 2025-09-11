@@ -1,4 +1,7 @@
-plugins { alias(libs.plugins.component.framework) }
+plugins {
+    alias(libs.plugins.component.framework)
+    alias(libs.plugins.dependency.lombok)
+}
 
 description =
     "Framework to simplify the creation of a spring boot application. " +
@@ -23,6 +26,7 @@ dependencies {
     api(libs.spring.test)
     api(libs.spring.web)
     implementation(projects.sakuraBootBasicApi)
+    implementation(projects.sakuraBootFileApi)
     implementation(projects.sakuraBootSpecificationApi)
     implementation(libs.assertj.core)
     implementation(libs.cache.api)

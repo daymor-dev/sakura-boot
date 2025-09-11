@@ -36,6 +36,7 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.ValidatableResponse;
+import lombok.experimental.UtilityClass;
 import org.apache.commons.lang3.StringUtils;
 import org.atteo.evo.inflector.English;
 import org.hamcrest.Matchers;
@@ -337,6 +338,47 @@ public interface SuperFT<E extends DataPresentation<I>,
         }
     }
 
+    private Class<?> resolveControllerClass(
+        final Object body, final SuperFTUtil<?, I> util) {
+
+        final String baseName = body.getClass()
+            .getName()
+            .replace(util.getEntityPackageName(),
+                util.getControllerPackageName())
+            .replace(util.getDtoPackageName(), util.getControllerPackageName())
+            .replace("Dto", "")
+            + "Controller";
+
+        try {
+
+            return Class.forName(baseName);
+        } catch (final ClassNotFoundException e) {
+
+            throw new RuntimeException(
+                "The controller class must follow the name convention. "
+                    + "(EntityName + Controller)",
+                e);
+        }
+    }
+
+    private String buildRelationPath(final Object body, final Field field) {
+
+        return RestAssured.baseURI
+            + ":"
+            + RestAssured.port
+            + getBasePath().replace(getClassName(body.getClass()),
+                getClassName(field, true));
+    }
+
+    private static String buildIdsFilter(
+        final Collection<?> collection, final String relationPath) {
+
+        return collection.stream()
+            .filter(Objects::nonNull)
+            .map(Object::toString)
+            .collect(Collectors.joining(",", relationPath + "?id.in=", ""));
+    }
+
     /**
      * The function creates a hyperlink reference for an entity, including self
      * and collection links, as well as any additional links specified by a
@@ -373,40 +415,14 @@ public interface SuperFT<E extends DataPresentation<I>,
 
                     return;
                 }
-                final Class<?> controllerClass;
-
-                try {
-
-                    controllerClass = Class.forName(body.getClass()
-                        .getName()
-                        .replace(getUtil().getEntityPackageName(),
-                            getUtil().getControllerPackageName())
-                        .replace(getUtil().getDtoPackageName(),
-                            getUtil().getControllerPackageName())
-                        .replace("Dto", "")
-                        + "Controller");
-                } catch (final ClassNotFoundException e) {
-
-                    throw new RuntimeException(
-                        "The controller class must follow the name convention."
-                            + " (EntityName + Controller)",
-                        e);
-                }
-                final String relationPath = RestAssured.baseURI
-                    + ":"
-                    + RestAssured.port
-                    + getBasePath().replace(getClassName(body.getClass()),
-                        getClassName(field, true));
+                final Class<?> controllerClass
+                    = resolveControllerClass(body, getUtil());
+                final String relationPath = buildRelationPath(body, field);
 
                 if (CriteriaController.class
                     .isAssignableFrom(controllerClass)) {
 
-                    final String idsFilter = collection.stream()
-                        .filter(Objects::nonNull)
-                        .map(Object::toString)
-                        .collect(Collectors.joining(",",
-                            relationPath + "?id" + ".in=", ""));
-                    relations.add(idsFilter);
+                    relations.add(buildIdsFilter(collection, relationPath));
                 } else {
 
                     relations.add(relationPath);
@@ -424,24 +440,40 @@ public interface SuperFT<E extends DataPresentation<I>,
 
             if (relations.size() == 1) {
 
-                relationshipPrefix = ", \"related\":";
+                relationshipPrefix
+                    = ", " + HypermediaPropertiesHelper.RELATED + ":";
                 relationshipSuffix = "";
             } else {
 
-                relationshipPrefix = ", \"related\":[";
+                relationshipPrefix
+                    = ", " + HypermediaPropertiesHelper.RELATED + ":[";
                 relationshipSuffix = "]";
             }
         }
 
-        return ", \"_links\":{\"self\":{\"href\":\""
+        return ", "
+            + HypermediaPropertiesHelper.LINKS
+            + ":{"
+            + HypermediaPropertiesHelper.SELF
+            + ":{"
+            + HypermediaPropertiesHelper.HREF
+            + ":\""
             + path
             + "/"
             + body.getId()
-            + "\"}, \"collection\":{\"href\":\""
+            + "\"}, "
+            + HypermediaPropertiesHelper.COLLECTION
+            + ":{"
+            + HypermediaPropertiesHelper.HREF
+            + ":\""
             + path
             + "\"}"
             + relations.stream()
-                .map(r -> "{\"href\":\"" + r + "\"}")
+                .map(r -> "{"
+                    + HypermediaPropertiesHelper.HREF
+                    + ":\""
+                    + r
+                    + "\"}")
                 .collect(Collectors.joining(", ", relationshipPrefix,
                     relationshipSuffix))
             + hypermediaUtil.addOtherLink(body, path)
@@ -483,7 +515,12 @@ public interface SuperFT<E extends DataPresentation<I>,
 
             params.add(param.getKey() + "=" + param.getValue());
         }
-        return "{\"href\":\"" + path + params + "\"}";
+        return "{"
+            + HypermediaPropertiesHelper.HREF
+            + ":\""
+            + path
+            + params
+            + "\"}";
     }
 
     /**
@@ -531,7 +568,9 @@ public interface SuperFT<E extends DataPresentation<I>,
 
             if (getUtil() instanceof HypermediaFTUtil) {
 
-                response.assertThat().body("_links", Matchers.notNullValue());
+                response.assertThat()
+                    .body(HypermediaPropertiesHelper.HYPERMEDIA_LINKS,
+                        Matchers.notNullValue());
             }
         }
 
@@ -614,7 +653,8 @@ public interface SuperFT<E extends DataPresentation<I>,
                 if (getUtil() instanceof HypermediaFTUtil) {
 
                     response.assertThat()
-                        .body(contentPath, everyItem(hasKey("_links")));
+                        .body(contentPath, everyItem(hasKey(
+                            HypermediaPropertiesHelper.HYPERMEDIA_LINKS)));
                 }
             }
 
@@ -673,33 +713,48 @@ public interface SuperFT<E extends DataPresentation<I>,
                 = RestAssured.baseURI + ":" + RestAssured.port + getBasePath();
             final String pageString = "page";
 
-            final String currentPageableJson
-                = "\"self\":" + createHrefWithParam(path, param);
+            final String currentPageableJson = HypermediaPropertiesHelper.SELF
+                + ":"
+                + createHrefWithParam(path, param);
             param.put(pageString, "0");
-            final String firstPageableJson
-                = "\"first\":" + createHrefWithParam(path, param);
+            final String firstPageableJson = HypermediaPropertiesHelper.FIRST
+                + ":"
+                + createHrefWithParam(path, param);
             param.put(pageString, "" + (bodyContains.getTotalPages() - 1));
-            final String lastPageableJson
-                = "\"last\":" + createHrefWithParam(path, param);
+            final String lastPageableJson = HypermediaPropertiesHelper.LAST
+                + ":"
+                + createHrefWithParam(path, param);
             param.put(pageString,
                 "" + bodyContains.previousOrFirstPageable().getPageNumber());
             final String previousPageableJson
-                = "\"previous\":" + createHrefWithParam(path, param);
+                = HypermediaPropertiesHelper.PREVIOUS
+                    + ":"
+                    + createHrefWithParam(path, param);
             param.put(pageString,
                 "" + bodyContains.nextOrLastPageable().getPageNumber());
-            final String nextPageableJson
-                = "\"next\":" + createHrefWithParam(path, param);
-            final String pageJson = "\"page\":{\"size\":"
+            final String nextPageableJson = HypermediaPropertiesHelper.NEXT
+                + ":"
+                + createHrefWithParam(path, param);
+            final String pageJson = HypermediaPropertiesHelper.PAGE
+                + ":{"
+                + HypermediaPropertiesHelper.SIZE
+                + ":"
                 + bodyContains.getSize()
-                + ", \"totalElements\":"
+                + ", "
+                + HypermediaPropertiesHelper.TOTAL_ELEMENTS
+                + ":"
                 + bodyContains.getTotalElements()
-                + ", \"totalPages\":"
+                + ", "
+                + HypermediaPropertiesHelper.TOTAL_PAGES
+                + ":"
                 + bodyContains.getTotalPages()
-                + ", \"number\":"
+                + ", "
+                + HypermediaPropertiesHelper.NUMBER
+                + ":"
                 + bodyContains.getNumber()
                 + "}";
-            final StringJoiner linksJoiner
-                = new StringJoiner(", ", "\"_links\":{", "}");
+            final StringJoiner linksJoiner = new StringJoiner(", ",
+                HypermediaPropertiesHelper.LINKS + ":{", "}");
 
             if (!bodyContains.hasPrevious() && !bodyContains.hasNext()) {
 
@@ -721,7 +776,9 @@ public interface SuperFT<E extends DataPresentation<I>,
                 linksJoiner.add(lastPageableJson);
             }
             final StringJoiner stringJoiner = new StringJoiner(", ",
-                "{\"_embedded\":{\""
+                "{"
+                    + HypermediaPropertiesHelper.EMBEDDED
+                    + ":{\""
                     + hypermediaUtil.entityCollectionName()
                     + "\":[",
                 "]}, " + linksJoiner + ", " + pageJson + "}");
@@ -775,43 +832,87 @@ public interface SuperFT<E extends DataPresentation<I>,
             final JsonPath expectedJson = new JsonPath("{\"content\":"
                 + getObjectMapper()
                     .writeValueAsString(bodyContains.getContent())
-                + ", \"pageable\":{\"pageNumber\":"
+                + ", "
+                + HypermediaPropertiesHelper.PAGEABLE
+                + ":{"
+                + HypermediaPropertiesHelper.PAGE_NUMBER
+                + ":"
                 + pageable.getPageNumber()
-                + ", \"pageSize\":"
+                + ", "
+                + HypermediaPropertiesHelper.PAGE_SIZE
+                + ":"
                 + pageable.getPageSize()
-                + ", \"sort\":{\"empty\":"
+                + ", "
+                + HypermediaPropertiesHelper.SORT
+                + ":{"
+                + HypermediaPropertiesHelper.EMPTY
+                + ":"
                 + sort.isEmpty()
-                + ", \"sorted\":"
+                + ", "
+                + HypermediaPropertiesHelper.SORTED
+                + ":"
                 + sort.isSorted()
-                + ", \"unsorted\":"
+                + ", "
+                + HypermediaPropertiesHelper.UNSORTED
+                + ":"
                 + sort.isUnsorted()
-                + "}, \"offset\":"
+                + "}, "
+                + HypermediaPropertiesHelper.OFFSET
+                + ":"
                 + pageable.getOffset()
-                + ", \"paged\":"
+                + ", "
+                + HypermediaPropertiesHelper.PAGED
+                + ":"
                 + pageable.isPaged()
-                + ", \"unpaged\":"
+                + ", "
+                + HypermediaPropertiesHelper.UNPAGED
+                + ":"
                 + pageable.isUnpaged()
-                + "}, \"totalElements\":"
+                + "}, "
+                + HypermediaPropertiesHelper.TOTAL_ELEMENTS
+                + ":"
                 + bodyContains.getTotalElements()
-                + ", \"totalPages\":"
+                + ", "
+                + HypermediaPropertiesHelper.TOTAL_PAGES
+                + ":"
                 + bodyContains.getTotalPages()
-                + ", \"last\":"
+                + ", "
+                + HypermediaPropertiesHelper.LAST
+                + ":"
                 + bodyContains.isLast()
-                + ", \"size\":"
+                + ", "
+                + HypermediaPropertiesHelper.SIZE
+                + ":"
                 + bodyContains.getSize()
-                + ", \"number\":"
+                + ", "
+                + HypermediaPropertiesHelper.NUMBER
+                + ":"
                 + bodyContains.getNumber()
-                + ", \"sort\":{\"empty\":"
+                + ", "
+                + HypermediaPropertiesHelper.SORT
+                + ":{"
+                + HypermediaPropertiesHelper.EMPTY
+                + ":"
                 + bodyContains.getSort().isEmpty()
-                + ", \"sorted\":"
+                + ", "
+                + HypermediaPropertiesHelper.SORTED
+                + ":"
                 + bodyContains.getSort().isSorted()
-                + ", \"unsorted\":"
+                + ", "
+                + HypermediaPropertiesHelper.UNSORTED
+                + ":"
                 + bodyContains.getSort().isUnsorted()
-                + "}, \"numberOfElements\":"
+                + "}, "
+                + HypermediaPropertiesHelper.NUMBER_OF_ELEMENTS
+                + ":"
                 + bodyContains.getNumberOfElements()
-                + ", \"first\":"
+                + ", "
+                + HypermediaPropertiesHelper.FIRST
+                + ":"
                 + bodyContains.isFirst()
-                + ", \"empty\":"
+                + ", "
+                + HypermediaPropertiesHelper.EMPTY
+                + ":"
                 + bodyContains.isEmpty()
                 + "}");
 
@@ -924,5 +1025,154 @@ public interface SuperFT<E extends DataPresentation<I>,
             RelationshipUtils.updateRelationFields(data, (field, value) -> null,
                 (field, collection) -> Set.of(), globalSpecification);
         }
+    }
+
+    /**
+     * Helper class containing constants for hypermedia properties.
+     * These properties are used to validate and assert the structure of
+     * hypermedia responses in tests, such as link relations and pagination
+     * attributes.
+     *
+     * @author Malcolm Rozé
+     * @since  0.1.5
+     */
+    @UtilityClass
+    class HypermediaPropertiesHelper {
+
+        /**
+         * The _links property used in hypermedia responses.
+         * Don't include the double quotes.
+         */
+        final String HYPERMEDIA_LINKS = "_links";
+
+        /**
+         * The href property used in hypermedia links.
+         */
+        final String HREF = "\"href\"";
+
+        /**
+         * The totalPages property used in pagination responses.
+         */
+        final String TOTAL_PAGES = "\"totalPages\"";
+
+        /**
+         * The number property used in pagination responses.
+         */
+        final String NUMBER = "\"number\"";
+
+        /**
+         * The sort property used in pagination responses.
+         */
+        final String SORT = "\"sort\"";
+
+        /**
+         * The empty property used in sort responses.
+         */
+        final String EMPTY = "\"empty\"";
+
+        /**
+         * The sorted property used in sort responses.
+         */
+        final String SORTED = "\"sorted\"";
+
+        /**
+         * The unsorted property used in sort responses.
+         */
+        final String UNSORTED = "\"unsorted\"";
+
+        /**
+         * The related property used in hypermedia links.
+         */
+        final String RELATED = "\"related\"";
+
+        /**
+         * The links property used in hypermedia responses.
+         */
+        final String LINKS = "\"_links\"";
+
+        /**
+         * The self property used in hypermedia links.
+         */
+        final String SELF = "\"self\"";
+
+        /**
+         * The collection property used in hypermedia links.
+         */
+        final String COLLECTION = "\"collection\"";
+
+        /**
+         * The first property used in pagination responses.
+         */
+        final String FIRST = "\"first\"";
+
+        /**
+         * The last property used in pagination responses.
+         */
+        final String LAST = "\"last\"";
+
+        /**
+         * The previous property used in pagination responses.
+         */
+        final String PREVIOUS = "\"previous\"";
+
+        /**
+         * The next property used in pagination responses.
+         */
+        final String NEXT = "\"next\"";
+
+        /**
+         * The page property used in pagination responses.
+         */
+        final String PAGE = "\"page\"";
+
+        /**
+         * The size property used in pagination responses.
+         */
+        final String SIZE = "\"size\"";
+
+        /**
+         * The totalElements property used in pagination responses.
+         */
+        final String TOTAL_ELEMENTS = "\"totalElements\"";
+
+        /**
+         * The first property used in pagination responses.
+         */
+        final String EMBEDDED = "\"_embedded\"";
+
+        /**
+         * The pageable property used in pagination responses.
+         */
+        final String PAGEABLE = "\"pageable\"";
+
+        /**
+         * The offset property used in pagination responses.
+         */
+        final String PAGE_NUMBER = "\"pageNumber\"";
+
+        /**
+         * The pageSize property used in pagination responses.
+         */
+        final String PAGE_SIZE = "\"pageSize\"";
+
+        /**
+         * The offset property used in pagination responses.
+         */
+        final String OFFSET = "\"offset\"";
+
+        /**
+         * The paged property used in pagination responses.
+         */
+        final String PAGED = "\"paged\"";
+
+        /**
+         * The unpaged property used in pagination responses.
+         */
+        final String UNPAGED = "\"unpaged\"";
+
+        /**
+         * The numberOfElements property used in pagination responses.
+         */
+        final String NUMBER_OF_ELEMENTS = "\"numberOfElements\"";
     }
 }

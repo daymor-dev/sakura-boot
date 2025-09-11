@@ -587,24 +587,38 @@ public class RelationshipUtils {
                 entityPackage, dtoPackage));
     }
 
+    private Field resolveIdField(final Object data, final Field field) {
+
+        try {
+
+            final Field idField
+                = data.getClass().getDeclaredField(field.getName() + "Id");
+            idField.setAccessible(true);
+            return idField;
+        } catch (final NoSuchFieldException e) {
+
+            field.setAccessible(true);
+            return field;
+        }
+    }
+
+    @Nullable
+    private Object normalizeValue(final Object value) {
+
+        if (value instanceof final DataPresentation<?> dp) {
+
+            return dp.getId();
+        }
+        return value;
+    }
+
     private void doWithIdAnyToOneFields(
         final Object data, final BiConsumer<Field, Object> consumer,
         final ReflectionUtils.FieldFilter fieldFilter) {
 
         ReflectionUtils.doWithFields(data.getClass(), (final Field field) -> {
 
-            Field idField;
-
-            try {
-
-                idField
-                    = data.getClass().getDeclaredField(field.getName() + "Id");
-            } catch (final NoSuchFieldException e) {
-
-                idField = field;
-            }
-            idField.setAccessible(true);
-
+            final Field idField = resolveIdField(data, field);
             final Object idFieldObject = idField.get(data);
 
             if (idFieldObject instanceof final DataPresentation<
@@ -624,30 +638,13 @@ public class RelationshipUtils {
 
         ReflectionUtils.doWithFields(data.getClass(), (final Field field) -> {
 
-            Field idField;
-
-            try {
-
-                idField
-                    = data.getClass().getDeclaredField(field.getName() + "Id");
-            } catch (final NoSuchFieldException e) {
-
-                idField = field;
-            }
-            idField.setAccessible(true);
+            final Field idField = resolveIdField(data, field);
 
             if (idField.get(data) instanceof final Collection<?> collection
                 && !collection.isEmpty()) {
 
-                collection.stream().map((final Object relationship) -> {
-
-                    if (relationship instanceof final DataPresentation<
-                        ?> dataPresentation) {
-
-                        return dataPresentation.getId();
-                    }
-                    return relationship;
-                })
+                collection.stream()
+                    .map(RelationshipUtils::normalizeValue)
                     .forEach(
                         idFieldObject -> consumer.accept(field, idFieldObject));
             }
@@ -661,31 +658,15 @@ public class RelationshipUtils {
 
         ReflectionUtils.doWithFields(data.getClass(), (final Field field) -> {
 
-            Field idField;
-
-            try {
-
-                idField
-                    = data.getClass().getDeclaredField(field.getName() + "Id");
-            } catch (final NoSuchFieldException e) {
-
-                idField = field;
-            }
-            idField.setAccessible(true);
+            final Field idField = resolveIdField(data, field);
 
             if (idField.get(data) instanceof final Collection<?> collection
                 && !collection.isEmpty()) {
 
                 consumerCollection.accept(field,
-                    collection.stream().map((final Object relationship) -> {
-
-                        if (relationship instanceof final DataPresentation<
-                            ?> dataPresentation) {
-
-                            return dataPresentation.getId();
-                        }
-                        return relationship;
-                    }).toList());
+                    collection.stream()
+                        .map(RelationshipUtils::normalizeValue)
+                        .toList());
             }
         }, fieldFilter);
     }

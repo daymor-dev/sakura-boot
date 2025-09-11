@@ -1,7 +1,4 @@
-plugins {
-    alias(libs.plugins.component.framework)
-    alias(libs.plugins.dependency.lombok)
-}
+plugins { alias(libs.plugins.component.framework) }
 
 description =
     "Framework to simplify the creation of a spring boot application. " +
@@ -13,6 +10,8 @@ publishing.publications.getByName<MavenPublication>("mavenJava") {
 
 dependencies {
     api(projects.sakuraBootFileApi)
+    api(libs.jakarta.persistence.api)
     api(libs.spring.core)
-    implementation(libs.jakarta.persistence.api)
+    api(libs.spring.tx)
+    implementation(projects.sakuraBootCore)
 }

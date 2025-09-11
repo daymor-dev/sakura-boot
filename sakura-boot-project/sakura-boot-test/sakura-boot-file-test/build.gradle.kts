@@ -1,7 +1,4 @@
-plugins {
-    alias(libs.plugins.component.framework)
-    alias(libs.plugins.dependency.lombok)
-}
+plugins { alias(libs.plugins.component.framework) }
 
 description =
     "Framework to simplify the creation of a spring boot application. " +
@@ -12,22 +9,16 @@ publishing.publications.getByName<MavenPublication>("mavenJava") {
 }
 
 dependencies {
-    api(projects.sakuraBootBasic)
-    api(projects.sakuraBootBasicApi)
     api(projects.sakuraBootCore)
     api(projects.sakuraBootCoreTest)
     api(projects.sakuraBootFileApi)
-    api(libs.jackson.databind)
-    api(libs.junit.jupiter.api)
     implementation(libs.assertj.core)
     implementation(libs.commons.lang3)
-    implementation(libs.hibernate.core)
-    implementation(libs.jackson.core)
     implementation(libs.mockito.core)
     implementation(libs.spring.core)
-    implementation(libs.spring.data.commons)
-    implementation(libs.spring.test)
     implementation(libs.spring.web)
     compileOnly(libs.jakarta.servlet.api)
     compileOnly(libs.spring.data.jpa)
+    runtimeOnly(libs.hibernate.core)
+    runtimeOnly(libs.junit.jupiter.api)
 }

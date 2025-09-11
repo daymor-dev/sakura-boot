@@ -12,10 +12,18 @@ publishing.publications.getByName<MavenPublication>("mavenJava") {
 }
 
 dependencies {
-    api(projects.sakuraBootBasicApi)
     api(projects.sakuraBootCore)
+    api(projects.sakuraBootLogApi)
+    api(projects.sakuraBootOpenapiApi)
     api(libs.hibernate.core)
+    api(libs.jakarta.persistence.api)
     api(libs.spring.core)
     api(libs.spring.tx)
-    implementation(libs.jakarta.persistence.api)
+    api(libs.spring.web)
+    implementation(projects.sakuraBootBasicApi)
+    implementation(libs.commons.lang3)
+}
+
+dependencyAnalysis {
+    issues { onIncorrectConfiguration { exclude(libs.hibernate.core) } }
 }

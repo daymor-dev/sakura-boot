@@ -147,41 +147,48 @@ public class ReflectionUtils {
         return null;
     }
 
+    @Nullable
+    private <T> Class<T> getBeanClassFromType(
+        final Type interfaceType, final String interfaceTypeName,
+        final int typeIndex, final Map<String, Class<?>> genericTypeInfo) {
+
+        if (interfaceType instanceof final ParameterizedType parameterizedType
+            && parameterizedType.getRawType()
+                .getTypeName()
+                .equals(interfaceTypeName)) {
+
+            final Type beanType
+                = parameterizedType.getActualTypeArguments()[typeIndex];
+
+            if (beanType instanceof final Class<?> beanClass) {
+
+                @SuppressWarnings("unchecked")
+                final Class<T> result = (Class<T>) beanClass;
+                return result;
+            }
+
+            if (beanType instanceof final TypeVariable<?> typeVariable
+                && genericTypeInfo.containsKey(typeVariable.getName())) {
+
+                @SuppressWarnings("unchecked")
+                final Class<T> result
+                    = (Class<T>) genericTypeInfo.get(typeVariable.getName());
+                return result;
+            }
+        }
+
+        return getGenericClass(interfaceTypeName, typeIndex, genericTypeInfo,
+            interfaceType);
+    }
+
     private <T> Class<T> findGenericTypeFromInterface(
         final Class<?> clazz, final String interfaceTypeName,
         final int typeIndex, final Map<String, Class<?>> genericTypeInfo) {
 
         for (final Type interfaceType: clazz.getGenericInterfaces()) {
 
-            /*@formatter:off*/
-            if (interfaceType
-                instanceof final ParameterizedType parameterizedType
-                && parameterizedType.getRawType()
-                .getTypeName()
-                .equals(interfaceTypeName)) {
-                /*@formatter:on*/
-                final Type beanType
-                    = parameterizedType.getActualTypeArguments()[typeIndex];
-
-                if (beanType instanceof final Class<?> beanClass) {
-
-                    @SuppressWarnings("unchecked")
-                    final Class<T> result = (Class<T>) beanClass;
-                    return result;
-                }
-
-                if (beanType instanceof final TypeVariable<?> typeVariable
-                    && genericTypeInfo.containsKey(typeVariable.getName())) {
-
-                    @SuppressWarnings("unchecked")
-                    final Class<T> result = (Class<T>) genericTypeInfo
-                        .get(typeVariable.getName());
-                    return result;
-                }
-            }
-
-            final Class<T> interfaceClass = getGenericClass(interfaceTypeName,
-                typeIndex, genericTypeInfo, interfaceType);
+            final Class<T> interfaceClass = getBeanClassFromType(interfaceType,
+                interfaceTypeName, typeIndex, genericTypeInfo);
 
             if (interfaceClass != null) {
 
