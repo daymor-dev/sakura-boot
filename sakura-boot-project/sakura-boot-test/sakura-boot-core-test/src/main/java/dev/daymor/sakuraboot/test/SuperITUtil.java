@@ -27,16 +27,13 @@ import dev.daymor.sakuraboot.DataPresentation;
 /**
  * The interface for all the utility integration test function. This interface
  * provides common functions for integration testing basic class.
- *
  * <p>
  * <b>Example:</b>
  * </p>
- *
  * <p>
  * To create a concrete util class that inherits from {@link SuperITUtil},
  * follow these steps:
  * </p>
- *
  * <p>
  * Implements the {@link SuperITUtil} interface:
  * </p>
@@ -65,7 +62,7 @@ import dev.daymor.sakuraboot.DataPresentation;
  *     public YourIdType getInvalidId() {
  *
  *         return ANY_OTHER_VALUE;
- *         // ANY_OTHER_VALUE must be different than ANY_VALUE and
+ *         // ANY_OTHER_VALUE must be different from ANY_VALUE and
  *         // ANY_BIGGER_VALUE can be -1L, "z"
  *         // or any other value of the type YourIdType.
  *     }

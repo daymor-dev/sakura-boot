@@ -149,7 +149,7 @@ public interface SuperControllerIT<E extends DataPresentation<I>,
     String LINKS_STRING = "_links";
 
     /**
-     * The string for the links path.
+     * The string for the _links path.
      */
     String LINKS_PATH = "$." + LINKS_STRING;
 
@@ -232,9 +232,9 @@ public interface SuperControllerIT<E extends DataPresentation<I>,
     }
 
     /**
-     * The fields that need to be ignored in the assert.
+     * The fields that need to be ignored in assert.
      *
-     * @return A list of fields that need to be ignored in the assert.
+     * @return A list of fields that need to be ignored in assert.
      */
     default List<String> fieldsToIgnoreInAssert() {
 

@@ -24,16 +24,13 @@ import dev.daymor.sakuraboot.util.ReflectionUtils;
 /**
  * The interface for all the utility test function. This interface
  * provides common functions for testing basic class with data.
- *
  * <p>
  * <b>Example:</b>
  * </p>
- *
  * <p>
  * To create a concrete util class that inherits from
  * {@link BasicDataTestUtil}, follow these steps:
  * </p>
- *
  * <p>
  * Implements the {@link BasicDataTestUtil} interface:
  * </p>
@@ -63,7 +60,7 @@ import dev.daymor.sakuraboot.util.ReflectionUtils;
  *     public YourIdType getInvalidId() {
  *
  *         return ANY_OTHER_VALUE;
- *         // ANY_OTHER_VALUE must be different than ANY_VALUE and
+ *         // ANY_OTHER_VALUE must be different from ANY_VALUE and
  *         // ANY_BIGGER_VALUE can be -1L, "z"
  *         // or any other value of the type YourIdType.
  *     }

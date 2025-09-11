@@ -263,7 +263,6 @@ public abstract class AbstractBasicMapperForRelationship<
                     return dataPresentation;
                 } else {
 
-                    // noinspection ReturnOfNull
                     return null;
                 }
             })
@@ -446,7 +445,6 @@ public abstract class AbstractBasicMapperForRelationship<
                     return dataPresentation;
                 } else {
 
-                    // noinspection ReturnOfNull
                     return null;
                 }
             })

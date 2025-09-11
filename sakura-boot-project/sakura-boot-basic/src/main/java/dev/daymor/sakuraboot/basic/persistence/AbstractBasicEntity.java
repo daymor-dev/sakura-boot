@@ -66,19 +66,19 @@ import dev.daymor.sakuraboot.util.ToStringUtils;
  *     &#064;Column(nullable = false)
  *     private Long id;
  *
- *     // For a One to One relationship
+ *     // For a One-to-One relationship
  *     &#064;OneToOne(fetch = FetchType.LAZY, cascade = {
  *         CascadeType.PERSIST, CascadeType.MERGE
  *     })
  *     private YourRelationalEntity relationship;
  *
- *     // For a Many to One relationship
+ *     // For a Many-to-One relationship
  *     &#064;ManyToOne(fetch = FetchType.LAZY, cascade = {
  *         CascadeType.PERSIST, CascadeType.MERGE
  *     })
  *     private YourRelationalEntity relationship;
  *
- *     // For a Many to Many relationship
+ *     // For a Many-to-Many relationship
  *     &#064;ManyToMany(cascade = {
  *         CascadeType.PERSIST, CascadeType.MERGE
  *     })
@@ -89,7 +89,7 @@ import dev.daymor.sakuraboot.util.ToStringUtils;
  *     &#064;Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
  *     private Set&lt;YourRelationalEntity&gt; relationships;
  *
- *     // Getter for a Many to Many relationship
+ *     // Getter for a Many-to-Many relationship
  *     public Set&lt;YourRelationalEntity&gt; getRelationships() {
  *
  *         if (relationships == null) {

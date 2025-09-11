@@ -21,7 +21,7 @@ import java.io.Serializable;
 import dev.daymor.sakuraboot.DataPresentation;
 
 /**
- * The interface for bulk functional tests with filering.
+ * The interface for bulk functional tests with filtering.
  *
  * <p>
  * <b>Example:</b>

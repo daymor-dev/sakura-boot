@@ -497,12 +497,12 @@ public interface SuperFT<E extends DataPresentation<I>,
     }
 
     /**
-     * The function creates a JSON string containing an href link with the given
+     * The function creates a JSON string containing a href link with the given
      * path and parameters.
      *
      * @param  path       Is a string representing the base URL.
      * @param  parameters The parameters given to the request.
-     * @return            The method is returning a JSON string that contains an
+     * @return            The method is returning a JSON string that contains a
      *                    "href" field with a value that is constructed using
      *                    the provided path and parameters.
      */
@@ -524,9 +524,9 @@ public interface SuperFT<E extends DataPresentation<I>,
     }
 
     /**
-     * The fields that need to be ignored in the assert.
+     * The fields that need to be ignored in assert.
      *
-     * @return A list of fields that need to be ignored in the assert.
+     * @return A list of fields that need to be ignored in assert.
      */
     default List<String> fieldsToIgnoreInAssert() {
 

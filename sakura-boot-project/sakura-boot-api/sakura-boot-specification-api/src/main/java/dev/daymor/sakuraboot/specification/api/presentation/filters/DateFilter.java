@@ -36,7 +36,7 @@ public interface DateFilter<
     /**
      * Filters the data to include only values from this value.
      *
-     * @return The from value.
+     * @return The "from" value.
      */
     @Nullable
     T getFrom();
@@ -44,7 +44,7 @@ public interface DateFilter<
     /**
      * Filters the data to include only values to this value.
      *
-     * @return The to value.
+     * @return The "to" value.
      */
     @Nullable
     T getTo();

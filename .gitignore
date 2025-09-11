@@ -75,7 +75,6 @@ local.properties
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/**/usage.statistics.xml
-.idea/**/dictionaries
 .idea/**/shelf
 
 # AWS User-specific
@@ -150,10 +149,11 @@ fabric.properties
 
 modules.xml
 
-# Custom: All xml file in .idea root except checkstyle and formatter.
+# Custom: All xml file in .idea root except checkstyle, formatter and dictionary.
 .idea/*.xml
 !.idea/checkstyle-idea.xml
 !.idea/eclipseCodeFormatter.xml
+.idea/dictionaries/project.xml
 
 ### Java ###
 # Compiled class file

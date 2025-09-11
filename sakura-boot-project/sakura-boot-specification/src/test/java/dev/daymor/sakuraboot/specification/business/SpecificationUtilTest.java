@@ -1109,21 +1109,21 @@ public sealed interface SpecificationUtilTest permits SpecificationBuilderTest {
     enum DateFilterName {
 
         /**
-         * The name of the from filter.
+         * The name of the "from" filter.
          */
         FROM,
         /**
-         * The name of the to filter.
+         * The name of the "to" filter.
          */
         TO;
 
         /**
-         * The name of the from filter as a constant value.
+         * The name of the "from" filter as a constant value.
          */
         public static final String FROM_NAME = "FROM";
 
         /**
-         * The name of the to filter as a constant value.
+         * The name of the "to" filter as a constant value.
          */
         public static final String TO_NAME = "TO";
     }
